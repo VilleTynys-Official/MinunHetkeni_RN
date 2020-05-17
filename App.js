@@ -15,16 +15,16 @@ import SplashScreen from './src/screens/SplashScreen';
 //STICHING TOGETHER THE NAVIGATORS
 //BottomTabNavigator on ylin navigaatio täs sovelluksessa.
 const BottomTabNavigator = createBottomTabNavigator({
-    Home: createStackNavigator({
+    Etusivu: createStackNavigator({
       Main: MainScreen,
       Course: CourseScreen,
       Media: MediaScreen
     }),
-    Search: createStackNavigator({
+    Haku: createStackNavigator({
       Search: SearchScreen,
       Media: MediaScreen
     }),
-    Settings: SettingsScreen
+    Asetukset: SettingsScreen
 
 });
 
