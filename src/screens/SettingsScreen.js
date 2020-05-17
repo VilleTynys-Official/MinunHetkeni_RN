@@ -1,9 +1,9 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-const SigninScreen = () => {
+const SettingsScreen = () => {
     return (
-        <Text style={StyleSheet.create({ fontSize: 50})} >SigninScreen</Text>
+        <Text style={StyleSheet.create({ fontSize: 50})} >SettingsScreen</Text>
     )
 };
 
@@ -11,4 +11,4 @@ const SigninScreen = () => {
 const styles = StyleSheet.create({});
 
 
-export default SigninScreen;
+export default SettingsScreen;
