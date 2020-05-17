@@ -5,29 +5,27 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 
 import { StyleSheet, Text, View } from 'react-native';
-import AccountScreen from './src/screens/AccountScreen';
-import SigninScreen from './src/screens/SigninScreen';
-import SignupScreen from './src/screens/SignupScreen';
-import TrackCreateScreen from './src/screens/TrackCreateScreen';
-import TrackDetailScreen from './src/screens/TrackDetailScreen';
-import TrackListScreen from './src/screens/TrackListScreen';
+import MainScreen from './src/screens/MainScreen';
+import SearchScreen from './src/screens/SearchScreen';
+import SettingsScreen from './src/screens/SettingsScreen';
+import CourseScreen from './src/screens/CourseScreen';
+import MediaScreen from './src/screens/MediaScreen';
+import SplashScreen from './src/screens/SplashScreen';
 
 //STICHING TOGETHER THE NAVIGATORS
-//switch on ylin navigaatio täs sovelluksessa.
-const switchNavigator = createSwitchNavigator({
-  loginFlow: createStackNavigator({
-    Signup: SignupScreen,
-    Signin: SigninScreen
-  }),
-  mainFlow: createBottomTabNavigator({
-    trackListFlow: createStackNavigator({
-      TrackList: TrackListScreen,
-      TrackDetail: TrackDetailScreen
+//BottomTabNavigator on ylin navigaatio täs sovelluksessa.
+const BottomTabNavigator = createBottomTabNavigator({
+    Home: createStackNavigator({
+      Main: MainScreen,
+      Course: CourseScreen,
+      Media: MediaScreen
     }),
+    Search: createStackNavigator({
+      Search: SearchScreen,
+      Media: MediaScreen
+    }),
+    Settings: SettingsScreen
 
-    TrackCreate: TrackCreateScreen,
-    Account: AccountScreen
-  })
 });
 
-export default createAppContainer(switchNavigator);
+export default createAppContainer(BottomTabNavigator);
