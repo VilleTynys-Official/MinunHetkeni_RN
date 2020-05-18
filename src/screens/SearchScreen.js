@@ -8,7 +8,9 @@ const SearchScreen = ({ navigation }) => {
     return(
         <>
             <SearchBar term= {term}
-                        onTermChange={newTerm =>setTerm(newTerm)}/>
+                        onTermChange={newTerm =>setTerm(newTerm)}
+                        onTermSubmit={()=>console.log('term submitted')}
+                        />
             <Text style={StyleSheet.create({ fontSize: 50})} >{term}</Text>
         </>
     )

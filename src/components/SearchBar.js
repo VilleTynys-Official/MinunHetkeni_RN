@@ -4,7 +4,7 @@ import { TextInput } from 'react-native-gesture-handler';
 import {Feather} from '@expo/vector-icons/';
 
 
-const SearchBar = ({ term, onTermChange}) => {
+const SearchBar = ({ term, onTermChange, onTermSubmit}) => {
     return (
         <View style={styles.backgroundStyle}>
             <Feather style={styles.iconStyle}
@@ -15,7 +15,7 @@ const SearchBar = ({ term, onTermChange}) => {
                         autoCapitalize= 'none'
                         value={term}
                         onChangeText={onTermChange}
-                        onEndEditig= {()=>{console.log('enter')}}
+                        onEndEditing = {onTermSubmit}
                         placeholder='Kirjoita tähän'></TextInput>
         </View>
     );
@@ -29,14 +29,17 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         marginTop: 10,
         marginHorizontal: 10,
-        flexDirection: 'row'      
+        flexDirection: 'row',        
+        // borderColor:'#000',
+        // borderWidth: 1
+        
+   
     },
     inputStyle: {
         fontSize: 20,
         // borderColor:'black',
         // borderWidth: 1,
         flex: 1
-        
 
     },
 
