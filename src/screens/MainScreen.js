@@ -1,10 +1,12 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
 const MainScreen = () => {
     return (
-        <Text style={StyleSheet.create({ fontSize: 50})} >MainScreen</Text>
-    )
+        <View>
+            <Text style={StyleSheet.create({ fontSize: 50})} >MainScreen</Text>
+        </View>
+    );
 };
 
 
