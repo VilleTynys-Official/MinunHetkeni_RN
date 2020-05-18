@@ -14,7 +14,7 @@ const SearchBar = ({ term, onTermChange}) => {
                         autoCorrect={false}
                         autoCapitalize= 'none'
                         value={term}
-                        onChangeText={newTerm => onTermChange(newTerm)}     //kun tekstiä muokataan niin callback välittää tiedon ylöspäin parentille.
+                        onChangeText={onTermChange}
                         onEndEditig= {()=>{console.log('enter')}}
                         placeholder='Kirjoita tähän'></TextInput>
         </View>
