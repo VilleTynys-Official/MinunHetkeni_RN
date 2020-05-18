@@ -1,28 +1,54 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
-import {Feather} from '@expo/vector-icons/Feather';
+import {Feather} from '@expo/vector-icons/';
 
-const SearchBar = () => {
+
+const SearchBar = ({ term, onTermChange}) => {
     return (
-        <View style={styles.background}>
-            <TextInput placeholder='Kirjoita tähän'></TextInput>
+        <View style={styles.backgroundStyle}>
+            <Feather style={styles.iconStyle}
+                    name='search'
+                    size={30}/>
+            <TextInput style={styles.inputStyle}
+                        autoCorrect={false}
+                        autoCapitalize= 'none'
+                        value={term}
+                        onChangeText={newTerm => onTermChange(newTerm)}     //kun tekstiä muokataan niin callback välittää tiedon ylöspäin parentille.
+                        onEndEditig= {()=>{console.log('enter')}}
+                        placeholder='Kirjoita tähän'></TextInput>
         </View>
     );
 };
 
 
 const styles = StyleSheet.create({
-    background: {
-        backgroundColor: 'rgb(240,240,240)',
+    backgroundStyle: {
+        backgroundColor: 'rgb(230,230,230)',
         height: 50,
         borderRadius: 10,
-        margin: 10
-        
+        marginTop: 10,
+        marginHorizontal: 10,
+        flexDirection: 'row'      
+    },
+    inputStyle: {
+        fontSize: 20,
+        // borderColor:'black',
+        // borderWidth: 1,
+        flex: 1
         
 
+    },
+
+    iconStyle: {
+        fontSize: 35,
+        alignSelf: 'center',
+        marginRight: 10,
+        marginLeft: 10
+    
         
     }
+
 });
 
 
