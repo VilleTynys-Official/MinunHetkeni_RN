@@ -1,5 +1,5 @@
 import React from 'react';
-import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 
@@ -15,17 +15,21 @@ import SplashScreen from './src/screens/SplashScreen';
 //STICHING TOGETHER THE NAVIGATORS
 //BottomTabNavigator on ylin navigaatio täs sovelluksessa.
 const BottomTabNavigator = createBottomTabNavigator({
+
+    
     Etusivu: createStackNavigator({
       Main: MainScreen,
       Course: CourseScreen,
       Media: MediaScreen
+      
     }),
     Haku: createStackNavigator({
       Search: SearchScreen,
       Media: MediaScreen
     }),
-    Asetukset: SettingsScreen
-
+    Asetukset: SettingsScreen,
 });
 
+//App.js on ensimmäinen renderöitävä tiedosto.
+//createAppContainer luo React componentin joka pitää sisällään Navigoinnin.
 export default createAppContainer(BottomTabNavigator);
