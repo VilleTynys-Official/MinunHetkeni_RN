@@ -8,7 +8,7 @@ import { StyleSheet, Text, View, Settings } from 'react-native';
 import MainScreen from './src/screens/MainScreen';
 import SearchScreen from './src/screens/SearchScreen';
 import SettingsScreen from './src/screens/SettingsScreen';
-import CourseScreen from './src/screens/CourseScreen';
+import LessonsScreen from './src/screens/LessonsScreen';
 import MediaScreen from './src/screens/MediaScreen';
 import SplashScreen from './src/screens/SplashScreen';
 
@@ -17,25 +17,57 @@ import SplashScreen from './src/screens/SplashScreen';
 
 //StackNavigatorit
 const MainStack = createStackNavigator({
-  MainScreen,
-  CourseScreen,
-  MediaScreen
+  Main: MainScreen,
+  Course: LessonsScreen,
+  Media: MediaScreen
+},
+{
+  headerMode: "screen",
+  initialRouteName: "Main"
 })
 
 const SearchStack = createStackNavigator({
-  SearchScreen,
-  MediaScreen
+  Search: SearchScreen,
+  Media: MediaScreen
+},
+{
+  headerMode: "screen",
+  initialRouteName: "Search"
 })
 
 
 
 
-//BottomTabNavigator on ylin navigaatio täs sovelluksessa.
-const BottomTabNavigator = createBottomTabNavigator({
-  Etusivu: MainStack,
-  Haku: SearchStack,
-  Asetukset: SettingsScreen
-})
+
+//BottomTabNavigator, joka on ylin navigaatio täs sovelluksessa.
+const BottomTabNavigator = createBottomTabNavigator(
+  {
+    Etusivu: MainStack,
+    Haku: SearchStack,
+    Asetukset: SettingsScreen
+  },
+  {
+    initialRouteName: "Haku",
+    navigationOptions: ({ navigation }) => ({
+    tabBarIcon: ({ focused, tintColor }) => {
+      const { routeName } = navigation.state
+      let iconName
+      if (routeName === "Etusivu") {
+        iconName = `search`
+      } else if (routeName === "Haku") {
+        iconName = `search`
+      }
+      console.log(iconName)
+      return <Feather name={iconName} size={25} color={tintColor} />
+    }
+   }),
+   tabBarOptions: {
+     activeTintColor: 'blue',
+     inactiveTintColor: "gray",
+     showIcon: 'true'
+   }
+ }
+)
 
 
 
@@ -52,7 +84,7 @@ const BottomTabNavigator = createBottomTabNavigator({
   //                       color={activeTintColor}/>
   //         )}
   //     },
-  //     Course: CourseScreen,
+  //     Course: LessonsScreen,
   //     Media: MediaScreen
       
   //   }),

@@ -1,9 +1,9 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-const CourseScreen = () => {
+const LessonsScreen = () => {
     return (
-        <Text style={StyleSheet.create({ fontSize: 50})} >CourseScreen</Text>
+        <Text style={StyleSheet.create({ fontSize: 50})} >LessonsScreen</Text>
     )
 };
 
@@ -11,4 +11,4 @@ const CourseScreen = () => {
 const styles = StyleSheet.create({});
 
 
-export default CourseScreen;
+export default LessonsScreen;
