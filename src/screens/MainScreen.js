@@ -6,8 +6,10 @@ const MainScreen = () => {
     return (
         <View>
             <Text style={StyleSheet.create({ fontSize: 50})} >MainScreen</Text>
-            <MeditationsList></MeditationsList>
-            <MeditationsList></MeditationsList>
+            <MeditationsList title='Ensimmäiset askeleet' />
+            <MeditationsList title='Metta meditointi' />  
+            <MeditationsList title='Hengitysharjoitukset' />  
+
             
         </View>
     );
