@@ -10,6 +10,24 @@
             "nimi": "Jatkokurssi",
             "kuvaus": "4 viikkoa kestävä ilmainen jatkokurssi",
             "kestoPäivissä": 28
+        },
+
+        {
+            "nimi": "Jatkokurssi 2",
+            "kuvaus": "4 viikkoa kestävä ilmainen jatkokurssi",
+            "kestoPäivissä": 28
+        },
+
+        {
+            "nimi": "Jatkokurssi 3",
+            "kuvaus": "4 viikkoa kestävä ilmainen jatkokurssi",
+            "kestoPäivissä": 28
+        },
+
+        {
+            "nimi": "Jatkokurssi 4",
+            "kuvaus": "4 viikkoa kestävä ilmainen jatkokurssi",
+            "kestoPäivissä": 28
         }
 
     ]
