@@ -3,7 +3,7 @@ import {View, Text, StyleSheet, Image} from 'react-native';
 
 
 //"pidetty tyhmänä". Näyttää kaikki meditaatiot jotka annetaan sisälle.
-const MeditationsList = ({title}) => {
+const CategoriesList = ({title}) => {
     return (
         <>
             <Text style= {styles.title}> {title}</Text>
@@ -20,4 +20,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default MeditationsList;
+export default CategoriesList;

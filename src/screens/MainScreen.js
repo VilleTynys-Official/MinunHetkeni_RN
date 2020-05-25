@@ -1,14 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import MeditationsList from '../components/MeditationsList';
+import CategoriesList from '../components/CategoriesList';
 
 const MainScreen = () => {
+
+    //tiedot data-basesta:
+    const [categories, setCategories] = useState([]);
+    
+
     return (
         <View>
             <Text style={StyleSheet.create({ fontSize: 50})} >MainScreen</Text>
-            <MeditationsList title='Ensimmäiset askeleet' />
-            <MeditationsList title='Metta meditointi' />  
-            <MeditationsList title='Hengitysharjoitukset' />  
+            <Text>We have found: {categories.length} categories</Text>
+            <CategoriesList title='Ensimmäiset askeleet' />
+            <CategoriesList title='Metta meditointi' />  
+            <CategoriesList title='Hengitysharjoitukset' />  
 
             
         </View>
