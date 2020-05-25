@@ -3,25 +3,30 @@
         {
             "nimi": "Ensimmäiset Askeleet",
             "kuvaus": "2 viikon mittainen aloittelijalle suunniteltu kokonaisuus",
-            "kestoPäivissä": 14
+            "kestoPäivissä": 14,
+            "voimassa": true
         },
 
         {
             "nimi": "Jatkokurssi",
             "kuvaus": "4 viikkoa kestävä ilmainen jatkokurssi",
-            "kestoPäivissä": 28
+            "kestoPäivissä": 28,
+            "voimassa": true
+
         },
 
         {
             "nimi": "Jatkokurssi2",
             "kuvaus": "4 viikkoa kestävä ilmainen jatkokurssi",
-            "kestoPäivissä": 28
+            "kestoPäivissä": 28,
+            "voimassa": true
         },
 
                 {
             "nimi": "Jatkokurssi3",
             "kuvaus": "4 viikkoa kestävä ilmainen jatkokurssi",
-            "kestoPäivissä": 28
+            "kestoPäivissä": 28,
+            "voimassa": false
         }
 
     ]
