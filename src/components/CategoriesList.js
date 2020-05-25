@@ -1,13 +1,13 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, FlatList} from 'react-native';
 
 
 //"pidetty tyhmänä". Näyttää kaikki meditaatiot jotka annetaan sisälle.
 const CategoriesList = ({title}) => {
     return (
-        <>
+        <View>
             <Text style= {styles.title}> {title}</Text>
-        </>
+        </View>
     )
 };
 
