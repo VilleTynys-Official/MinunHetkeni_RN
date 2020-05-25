@@ -1,0 +1,16 @@
+{
+    "kategoria": [
+        {
+            "nimi": "Ensimmäiset Askeleet",
+            "kuvaus": "2 viikon mittainen aloittelijalle suunniteltu kokonaisuus",
+            "kestoPäivissä": 14
+        },
+
+        {
+            "nimi": "Jatkokurssi",
+            "kuvaus": "4 viikkoa kestävä ilmainen jatkokurssi",
+            "kestoPäivissä": 28
+        }
+
+    ]
+}
