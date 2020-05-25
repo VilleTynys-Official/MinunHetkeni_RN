@@ -1,6 +1,8 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 
+
+//"pidetty tyhmänä". Näyttää kaikki meditaatiot jotka annetaan sisälle.
 const MeditationsList = ({title}) => {
     return (
         <>
