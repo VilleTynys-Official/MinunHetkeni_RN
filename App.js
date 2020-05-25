@@ -11,29 +11,40 @@ import SettingsScreen from './src/screens/SettingsScreen';
 import LessonsScreen from './src/screens/LessonsScreen';
 import MediaScreen from './src/screens/MediaScreen';
 import SplashScreen from './src/screens/SplashScreen';
+import DownloadsScreen from './src/screens/DownloadsScreen';
 
 //STICHING TOGETHER THE NAVIGATORS
 
 
 //StackNavigatorit
 const MainStack = createStackNavigator({
-  Main: MainScreen,
-  Course: LessonsScreen,
-  Media: MediaScreen
-},
-{
-  headerMode: "screen",
-  initialRouteName: "Main"
-})
+    Main: MainScreen,
+    Course: LessonsScreen,
+    Media: MediaScreen
+  },
+  {
+    headerMode: "screen",
+    initialRouteName: "Main"
+  })
 
 const SearchStack = createStackNavigator({
-  Search: SearchScreen,
-  Media: MediaScreen
-},
-{
-  headerMode: "screen",
-  initialRouteName: "Search"
-})
+    Search: SearchScreen,
+    Media: MediaScreen
+  },
+  {
+    headerMode: "screen",
+    initialRouteName: "Search"
+  })
+
+
+const DownloadsStack = createStackNavigator({
+    Downloads: DownloadsScreen,
+    Media: MediaScreen
+  },
+  {
+    headerMode: "screen",
+    initialRouteName: "Downloads"
+  })
 
 
 
@@ -43,6 +54,7 @@ const SearchStack = createStackNavigator({
 const BottomTabNavigator = createBottomTabNavigator(
   {
     Etusivu: MainStack,
+    OmatLataukset: DownloadsStack,
     Haku: SearchStack,
     Asetukset: SettingsScreen
   },
