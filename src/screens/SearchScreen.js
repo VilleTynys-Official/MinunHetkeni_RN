@@ -11,7 +11,7 @@ const SearchScreen = ({ navigation }) => {
                         onTermChange={newTerm =>setTerm(newTerm)}
                         onTermSubmit={()=>console.log('term submitted')}
                         />
-            <Text style={StyleSheet.create({ fontSize: 50})} >{term}</Text>
+            <Text style={StyleSheet.create({ fontSize: 50})} >{term}+testiteksti ☟ ✍✌</Text>
         </>
     )
     };
