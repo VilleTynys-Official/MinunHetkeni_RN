@@ -6,8 +6,8 @@ import useCategories from '../hooks/useCategories';
 
 const MainScreen = () => {
     const categories = useCategories();
-    console.log(categories);
-    console.log('**********')
+    // console.log(categories);
+    // console.log('**********')
 
 
 
@@ -24,7 +24,6 @@ const MainScreen = () => {
         <View>
             <Text style={StyleSheet.create({ fontSize: 50})} >MainScreen</Text>
             <Text>We have found: {categories.length} categories</Text>
-            <Text></Text>
             <CategoriesList categories={filterCategoriesByAvailability(true)}
                             title='Voimassa' />
             <CategoriesList categories={filterCategoriesByAvailability(false)}
