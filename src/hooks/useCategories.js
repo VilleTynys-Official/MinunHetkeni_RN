@@ -1,4 +1,3 @@
-
 import {useEffect, useState} from 'react';
 import DataBaseInformation from '../data/DataBaseInformation.json';
 

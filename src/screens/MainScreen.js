@@ -10,14 +10,25 @@ const MainScreen = () => {
     console.log('**********')
 
 
+
+    //näytetään vain ne jotka ovat "voimassa".
+    const filterCategoriesByAvailability = (voimassa) =>{
+        // voimassa === true | false    ...tämä siis riippuu aina siitä mikä objekti on kyseessä.
+        return categories.filter(category => {
+            //console.log(category.voimassa)
+            return category.voimassa === voimassa;
+            }
+        )};
+
     return (
         <View>
             <Text style={StyleSheet.create({ fontSize: 50})} >MainScreen</Text>
             <Text>We have found: {categories.length} categories</Text>
             <Text></Text>
-            <CategoriesList title='Ensimmäiset askeleet' />
-            <CategoriesList title='Metta meditointi' />  
-            <CategoriesList title='Hengitysharjoitukset' />  
+            <CategoriesList categories={filterCategoriesByAvailability(true)}
+                            title='Voimassa' />
+            <CategoriesList categories={filterCategoriesByAvailability(false)}
+                            title='Ei voimassa' />
         </View>
     );
 };
