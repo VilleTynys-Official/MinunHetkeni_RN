@@ -26,7 +26,8 @@ const MainScreen = () => {
 
 
 
-        //huom. ScrollView:n takia CategoriesList:ssä oleva flatlist lataa kaikki suoraan. TODO: keksi parempi ratkaisu, jos on kategorioiden lataaminen hidastuu merkittävästi.
+        //huom. ScrollView:n takia CategoriesList:ssä oleva flatlist lataa kaikki suoraan.
+        //jos kategorioiden lataaminen hidastuu merkittävästi, voidaan Flatlist vaihtaa horizontaaliseksi, jolloin "lazy loading" toimii jälleen.
     return (
         <ScrollView>
             <View>
