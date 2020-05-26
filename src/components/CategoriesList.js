@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image, FlatList} from 'react-native';
 import CategoriesDetail from './CategoriesDetail';
+import { ScrollView } from 'react-native-gesture-handler';
 
 //komponentti "pidetty tyhmänä" >>> Näyttää kaikki meditaatiot jotka annetaan sisälle.
 const CategoriesList = ({title, categories}) => {
@@ -8,7 +9,8 @@ const CategoriesList = ({title, categories}) => {
         <View style={styles.container}>
             <Text style= {styles.title}> {title}</Text>
             <FlatList 
-                // horizontal
+                //horizontal
+                nestedScrollEnabled={false}
                 data={categories}
                 keyExtractor={ (category) => category.nimi} //TODO: uniikit Id numerot..
                 renderItem = {( {item }) => {
@@ -28,7 +30,7 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
     container: {
-        marginBottom: 30
+        marginBottom: 30,
     }
 
 });
