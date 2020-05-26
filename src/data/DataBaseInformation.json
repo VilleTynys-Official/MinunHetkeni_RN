@@ -19,7 +19,7 @@
 
         {
             "nimi": "Jatkokurssi",
-            "kuvaus": "4 viikkoa kestävä jatkokurssi, jossa syvennetäään peruskurssilla opittuja menetelmiä",
+            "kuvaus": "4 viikkoa kestävä jatkokurssi, jossa syvennetään peruskurssilla opittuja menetelmiä.",
             "kestoPäivissä": 28,
             "voimassa": true,
             "image_url": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1557258847-chinese-evergreen-houseplant-1557258690.jpg?crop=0.883xw:0.887xh;0.0849xw,0.0821xh&resize=480:*"
