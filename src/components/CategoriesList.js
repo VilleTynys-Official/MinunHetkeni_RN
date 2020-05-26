@@ -2,9 +2,11 @@ import React from 'react';
 import {View, Text, StyleSheet, Image, FlatList} from 'react-native';
 import CategoriesDetail from './CategoriesDetail';
 import { ScrollView } from 'react-native-gesture-handler';
-
+import {withNavigation} from 'react-navigation'; //tää tuo navigoinnnin (otetaan käyttöön exportissa)
 //komponentti "pidetty tyhmänä" >>> Näyttää kaikki meditaatiot jotka annetaan sisälle.
-const CategoriesList = ({title, categories}) => {
+
+
+const CategoriesList = ({title, categories, navigation}) => {
     return (
         <View style={styles.container}>
             <Text style= {styles.title}> {title}</Text>
@@ -36,4 +38,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default CategoriesList;
+export default withNavigation(CategoriesList);
