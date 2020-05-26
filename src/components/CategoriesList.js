@@ -2,16 +2,11 @@ import React from 'react';
 import {View, Text, StyleSheet, Image, FlatList} from 'react-native';
 import CategoriesDetail from './CategoriesDetail';
 
-
-
-
-
-//"pidetty tyhmänä". Näyttää kaikki meditaatiot jotka annetaan sisälle.
+//komponentti "pidetty tyhmänä" >>> Näyttää kaikki meditaatiot jotka annetaan sisälle.
 const CategoriesList = ({title, categories}) => {
     return (
-        <View>
+        <View style={styles.container}>
             <Text style= {styles.title}> {title}</Text>
-            <Text>kursseja:{categories.length}</Text>
             <FlatList 
                 // horizontal
                 data={categories}
@@ -27,9 +22,15 @@ const CategoriesList = ({title, categories}) => {
 
 const styles = StyleSheet.create({
     title: {
-        fontSize: 18,
-        fontWeight: 'bold'
+        fontSize: 25,
+        fontWeight: 'bold',
+        marginLeft: 10,
+        marginBottom: 5,
+    },
+    container: {
+        marginBottom: 30
     }
+
 });
 
 
