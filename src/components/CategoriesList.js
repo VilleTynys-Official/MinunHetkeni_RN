@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, FlatList} from 'react-native';
+import {View, Text, StyleSheet, Image, FlatList, TouchableOpacity} from 'react-native';
 import CategoriesDetail from './CategoriesDetail';
 import { ScrollView } from 'react-native-gesture-handler';
 import {withNavigation} from 'react-navigation'; //tää tuo navigoinnnin (otetaan käyttöön exportissa)
@@ -16,7 +16,13 @@ const CategoriesList = ({title, categories, navigation}) => {
                 data={categories}
                 keyExtractor={ (category) => category.nimi} //TODO: uniikit Id numerot..
                 renderItem = {( {item }) => {
-                    return <CategoriesDetail category={item}/>
+                    return (
+                    <TouchableOpacity onPress={()=> navigation.navigate('Lessons')}>
+                        <CategoriesDetail category={item} />
+                    </TouchableOpacity>
+                        
+
+                    )
                 }}
             />
         </View>
