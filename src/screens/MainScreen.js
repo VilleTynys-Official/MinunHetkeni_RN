@@ -22,8 +22,6 @@ const MainScreen = () => {
 
     return (
         <View>
-            <Text style={StyleSheet.create({ fontSize: 50})} >MainScreen</Text>
-            <Text>We have found: {categories.length} categories</Text>
             <CategoriesList categories={filterCategoriesByAvailability(true)}
                             title='Voimassa' />
             <CategoriesList categories={filterCategoriesByAvailability(false)}
@@ -34,6 +32,4 @@ const MainScreen = () => {
 
 
 const styles = StyleSheet.create({});
-
-
 export default MainScreen;
