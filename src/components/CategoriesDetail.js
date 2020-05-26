@@ -8,12 +8,19 @@ import {View, Image, Text, StyleSheet } from 'react-native';
 const CategoriesDetail = ({category}) =>{
     return (
         <View>
-
+            <Image source={ require('../imgs/kategoria1.png')}
+                    style={styles.image} />
             <Text>{category.nimi}     </Text>
         </View>
     )
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    image:{
+        width: 150,
+        height: 120,
+        borderRadius: 4
+    }
+});
 
 export default CategoriesDetail;

@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, FlatList} from 'react-native';
+import {View, Text, StyleSheet, Image, FlatList, ScrollView} from 'react-native';
 import CategoriesDetail from './CategoriesDetail';
 
 
@@ -13,7 +13,7 @@ const CategoriesList = ({title, categories}) => {
             <Text style= {styles.title}> {title}</Text>
             <Text>kursseja:{categories.length}</Text>
             <FlatList 
-                horizontal
+                // horizontal
                 data={categories}
                 keyExtractor={ (category) => category.nimi} //TODO: uniikit Id numerot..
                 renderItem = {( {item }) => {
