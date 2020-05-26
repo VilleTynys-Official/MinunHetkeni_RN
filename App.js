@@ -2,9 +2,7 @@ import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-
 import {Feather} from '@expo/vector-icons';
-import { StyleSheet, Text, View, Settings } from 'react-native';
 import MainScreen from './src/screens/MainScreen';
 import SearchScreen from './src/screens/SearchScreen';
 import SettingsScreen from './src/screens/SettingsScreen';
@@ -19,7 +17,7 @@ import DownloadsScreen from './src/screens/DownloadsScreen';
 //StackNavigatorit
 const MainStack = createStackNavigator({
     Main: MainScreen,
-    Course: LessonsScreen,
+    Lessons: LessonsScreen,
     Media: MediaScreen
   },
   {
