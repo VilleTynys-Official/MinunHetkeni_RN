@@ -16,6 +16,7 @@ const CategoriesDetail = ({category}) =>{
             </View>
             <View style={{flex:1}}>
                 <Text style={styles.heading}>{category.nimi}</Text>
+                <Text style={styles.kestoText}>Kurssin kesto: {category.kestoPäivissä} päivää</Text>
                 <Text style={styles.infoText}>{category.kuvaus}</Text>
             </View>
         </View>
@@ -28,24 +29,29 @@ const CategoriesDetail = ({category}) =>{
 const styles = StyleSheet.create({
     image:{
         width: 150,
-        height: 120,
+        height: 150,
         borderRadius: 10,
+        flexGrow: 1, ///venyttää imagen tekstiä mukaillen.
+
 
 
     },
     heading:{
         fontSize:20,
-        textAlign: 'center',
+        textAlign: 'left',
         fontWeight: "bold"
     },
 
     infoText:{
-        textAlign: 'center',
-
+        textAlign: 'left',
+    },
+    kestoText:{
+        textAlign: 'left',
+        marginBottom:5
     },
 
     container:{
-        margin: 10,
+        margin: 15,
         flexDirection: 'row'
     }
 });
