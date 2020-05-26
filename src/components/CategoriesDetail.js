@@ -8,9 +8,11 @@ import {View, Image, Text, StyleSheet } from 'react-native';
  */
 
 const CategoriesDetail = ({category}) =>{
+    // console.log(category.image_url)
+    // console.log('*****')
     return (
         <View>
-            <Image source={{uri: 'https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1557258847-chinese-evergreen-houseplant-1557258690.jpg?crop=0.883xw:0.887xh;0.0849xw,0.0821xh&resize=480:*'}}
+            <Image source={{uri: category.image_url}}
                     style={styles.image} />
             <Text>{category.nimi}   </Text>
         </View>

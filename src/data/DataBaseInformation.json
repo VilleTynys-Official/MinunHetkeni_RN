@@ -5,7 +5,7 @@
             "kuvaus": "2 viikon mittainen aloittelijalle suunniteltu kokonaisuus",
             "kestoPäivissä": 14,
             "voimassa": true,
-            "image_name": "kategoria1"
+            "image_url": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1557258847-chinese-evergreen-houseplant-1557258690.jpg?crop=0.883xw:0.887xh;0.0849xw,0.0821xh&resize=480:*"
         },
 
         {
@@ -13,7 +13,7 @@
             "kuvaus": "4 viikkoa kestävä ilmainen jatkokurssi",
             "kestoPäivissä": 28,
             "voimassa": true,
-            "image_name": "kategoria2"
+            "image_url": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1557258847-chinese-evergreen-houseplant-1557258690.jpg?crop=0.883xw:0.887xh;0.0849xw,0.0821xh&resize=480:*"
 
         },
 
@@ -22,7 +22,7 @@
             "kuvaus": "4 viikkoa kestävä ilmainen jatkokurssi",
             "kestoPäivissä": 28,
             "voimassa": true,
-            "image_name": "kategoria2a"
+            "image_url": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1557258847-chinese-evergreen-houseplant-1557258690.jpg?crop=0.883xw:0.887xh;0.0849xw,0.0821xh&resize=480:*"
         },
 
                 {
@@ -30,7 +30,7 @@
             "kuvaus": "4 viikkoa kestävä ilmainen jatkokurssi",
             "kestoPäivissä": 28,
             "voimassa": false,
-            "image_name": "kategoria3"
+            "image_url": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1557258847-chinese-evergreen-houseplant-1557258690.jpg?crop=0.883xw:0.887xh;0.0849xw,0.0821xh&resize=480:*"
         }
 
     ]
