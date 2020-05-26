@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, FlatList, ScrollView} from 'react-native';
+import {View, Text, StyleSheet, Image, FlatList} from 'react-native';
 import CategoriesDetail from './CategoriesDetail';
 
 
