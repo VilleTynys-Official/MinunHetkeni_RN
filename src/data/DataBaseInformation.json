@@ -2,15 +2,15 @@
     "kategoriat": [
         {
             "nimi": "Ensimmäiset Askeleet",
-            "kuvaus": "2 viikon mittainen aloittelijalle suunniteltu kokonaisuus",
+            "kuvaus": "Kevyt tutustuminen meditointiin, josta jokaisen on hyvä aloittaa.  ",
             "kestoPäivissä": 14,
             "voimassa": true,
             "image_url": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1557258847-chinese-evergreen-houseplant-1557258690.jpg?crop=0.883xw:0.887xh;0.0849xw,0.0821xh&resize=480:*"
         },
 
         {
-            "nimi": "Jatkokurssi",
-            "kuvaus": "4 viikkoa kestävä ilmainen jatkokurssi",
+            "nimi": "Peruskurssi",
+            "kuvaus": "4 viikkoa kestävä ilmainen peruskurssi. Ideana oppia ohjatusti perusteet joiden avulla meditointi onnistuu tarvittaessa myös ilman ohjausta.",
             "kestoPäivissä": 28,
             "voimassa": true,
             "image_url": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1557258847-chinese-evergreen-houseplant-1557258690.jpg?crop=0.883xw:0.887xh;0.0849xw,0.0821xh&resize=480:*"
@@ -18,16 +18,16 @@
         },
 
         {
-            "nimi": "Jatkokurssi2",
-            "kuvaus": "4 viikkoa kestävä ilmainen jatkokurssi",
+            "nimi": "Jatkokurssi",
+            "kuvaus": "4 viikkoa kestävä jatkokurssi, jossa syvennetäään peruskurssilla opittuja menetelmiä",
             "kestoPäivissä": 28,
             "voimassa": true,
             "image_url": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1557258847-chinese-evergreen-houseplant-1557258690.jpg?crop=0.883xw:0.887xh;0.0849xw,0.0821xh&resize=480:*"
         },
 
                 {
-            "nimi": "Jatkokurssi3",
-            "kuvaus": "4 viikkoa kestävä ilmainen jatkokurssi",
+            "nimi": "Metta-meditointi",
+            "kuvaus": "Ystävällisyyttä itseäsi sekä muita kohtaan korostava meditointi menetelmä. Tämä ohjattu kurssi tuo vaihtelua perinteiseen Vipasana-meditointi lähestymistapaan.",
             "kestoPäivissä": 28,
             "voimassa": false,
             "image_url": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1557258847-chinese-evergreen-houseplant-1557258690.jpg?crop=0.883xw:0.887xh;0.0849xw,0.0821xh&resize=480:*"
