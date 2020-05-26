@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 import {Feather} from '@expo/vector-icons/';
-
+//iconilla varustettu searchbar, joka saa kolme propsia sisäänsä.
 
 const SearchBar = ({ term, onTermChange, onTermSubmit}) => {
     return (

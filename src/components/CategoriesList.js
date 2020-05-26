@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image, FlatList} from 'react-native';
+import CategoriesDetail from './CategoriesDetail';
 
 
 
@@ -16,7 +17,7 @@ const CategoriesList = ({title, categories}) => {
                 data={categories}
                 keyExtractor={ (category) => category.nimi} //TODO: uniikit Id numerot..
                 renderItem = {( {item }) => {
-                    return <Text>{item.nimi}    </Text>
+                    return <CategoriesDetail/>
                 }}
             />
         </View>

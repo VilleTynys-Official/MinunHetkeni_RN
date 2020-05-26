@@ -11,7 +11,7 @@ const MainScreen = () => {
 
 
 
-    //näytetään vain ne jotka ovat "voimassa".
+    //filtteröi sen mukaan onko voimassa true vai false.
     const filterCategoriesByAvailability = (voimassa) =>{
         // voimassa === true | false    ...tämä siis riippuu aina siitä mikä objekti on kyseessä.
         return categories.filter(category => {
