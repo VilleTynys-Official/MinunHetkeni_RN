@@ -1,10 +1,15 @@
 import React from 'react';
 import {View, Image, Text, StyleSheet } from 'react-native';
 
-const CategoriesDetail = () =>{
+/**
+ * Kategorioiden muotoilu tapahtuu täällä.
+ */
+
+const CategoriesDetail = ({category}) =>{
     return (
         <View>
-            <Text>category detail</Text>
+
+            <Text>{category.nimi}     </Text>
         </View>
     )
 };

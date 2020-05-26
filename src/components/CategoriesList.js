@@ -17,7 +17,7 @@ const CategoriesList = ({title, categories}) => {
                 data={categories}
                 keyExtractor={ (category) => category.nimi} //TODO: uniikit Id numerot..
                 renderItem = {( {item }) => {
-                    return <CategoriesDetail/>
+                    return <CategoriesDetail category={item}/>
                 }}
             />
         </View>
