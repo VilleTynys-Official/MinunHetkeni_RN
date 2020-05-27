@@ -9,7 +9,7 @@ import LessonsDetail from './LessonsDetail';
 //komponentti "pidetty tyhmänä" >>> Näyttää kaikki lessonit jotka annetaan sisälle.
 
 
-const LessonsList = ({lessons}) => {
+const LessonsList = ({lessons, navigation}) => {
     // console.log(lesson)
     return (
         <View style={styles.container}>
@@ -19,7 +19,9 @@ const LessonsList = ({lessons}) => {
                 keyExtractor={ (lesson) => lesson.nimi}
                 renderItem = {( {item }) => {
                     return (
-                        <LessonsDetail lesson ={item}></LessonsDetail>
+                        <TouchableOpacity onPress={()=>navigation.navigate('Media')}>
+                            <LessonsDetail lesson ={item}></LessonsDetail>
+                        </TouchableOpacity>
                     )
                 }}    
             />
