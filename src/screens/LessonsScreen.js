@@ -23,10 +23,10 @@ const LessonsScreen = ({navigation}) => {
 
 
     return (
-            <>
+            <View>
                 <LessonsList lessons ={lessons}
-                ></LessonsList>
-            </>
+                />
+            </View>
 
     );
 };

@@ -10,11 +10,11 @@ const LessonsDetail = ({lesson}) =>{
     // console.log('*****')
     
     return (
+        
+
         <View style={styles.container}>
-            <View style={{flex:1}}>
                 <Text style={styles.heading}>{lesson.nimi}</Text>
                 <Text style={styles.kestoText}>{lesson.kesto}</Text>
-            </View>
         </View>
     )
 };
@@ -23,13 +23,7 @@ const LessonsDetail = ({lesson}) =>{
 
 // justifyContent, Flexbox
 const styles = StyleSheet.create({
-    image:{
-        width: 150,
-        height: 150,
-        borderRadius: 10,
-        flexGrow: 1, ///venyttää imagen tekstiä mukaillen.
 
-    },
     heading:{
         fontSize:20,
         textAlign: 'left',
@@ -45,7 +39,12 @@ const styles = StyleSheet.create({
     },
 
     container:{
-        margin: 15,
+        marginHorizontal: 20,
+        alignItems: 'center',
+        borderWidth: 1,
+        borderRadius: 10,
+        backgroundColor: 'rgb(150,170,220)'
+
     }
 });
 
