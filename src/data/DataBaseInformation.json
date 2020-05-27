@@ -2,6 +2,7 @@
     "kategoriat": [
         {
             "nimi": "Ensimmäiset Askeleet",
+            "kategoria_id": "0001",
             "kuvaus": "2 viikkoa kestävä kurssi, joka sisältää lyhyen ohjatun meditoinnin viikon jokaiselle päivälle.",
             "kestoPäivissä": 14,
             "voimassa": true,
@@ -10,6 +11,7 @@
 
         {
             "nimi": "Peruskurssi",
+            "kategoria_id": "0002",
             "kuvaus": "4 viikkoa kestävä ilmainen peruskurssi. Ideana oppia ohjatusti perusteet joiden avulla meditointi onnistuu tarvittaessa myös ilman ohjausta.",
             "kestoPäivissä": 28,
             "voimassa": true,
@@ -19,6 +21,7 @@
 
         {
             "nimi": "Jatkokurssi",
+            "kategoria_id": "0003",
             "kuvaus": "4 viikkoa kestävä jatkokurssi, jossa syvennetään peruskurssilla opittuja menetelmiä.",
             "kestoPäivissä": 28,
             "voimassa": true,
@@ -27,6 +30,7 @@
 
                 {
             "nimi": "Metta-meditointi",
+            "kategoria_id": "0004",
             "kuvaus": "Ystävällisyyttä itseäsi sekä muita kohtaan korostava meditointi menetelmä. Tämä ohjattu kurssi tuo vaihtelua perinteiseen Vipasana-meditointi lähestymistapaan.",
             "kestoPäivissä": 28,
             "voimassa": false,
