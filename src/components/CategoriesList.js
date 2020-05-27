@@ -14,7 +14,7 @@ const CategoriesList = ({title, categories, navigation}) => {
                 //horizontal
                 nestedScrollEnabled={false}
                 data={categories}
-                keyExtractor={ (category) => category.nimi} //TODO: uniikit Id numerot..
+                keyExtractor={ (category) => category.kategoria_id}
                 renderItem = {( {item }) => {
                     return (
                     <TouchableOpacity onPress={()=> navigation.navigate('Lessons')}>
