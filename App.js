@@ -94,7 +94,7 @@ const BottomTabNavigator = createBottomTabNavigator(
   //                       color={activeTintColor}/>
   //         )}
   //     },
-  //     Course: LessonsScreen,
+  //     Lesson: LessonsScreen,
   //     Media: MediaScreen
       
   //   }),

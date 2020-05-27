@@ -33,8 +33,6 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         flexGrow: 1, ///venyttää imagen tekstiä mukaillen.
 
-
-
     },
     heading:{
         fontSize:20,
