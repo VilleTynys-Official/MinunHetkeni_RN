@@ -3,6 +3,7 @@ import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import useCategories from '../hooks/useCategories';
 import CategoriesList from '../components/CategoriesList';
 import { FlatList } from 'react-native-gesture-handler';
+import LessonsList from '../components/LessonsList';
 
 /**TODO
  * 1 haetaan valitun kategorian lessonien tiedot. OK
@@ -18,27 +19,20 @@ const LessonsScreen = ({navigation}) => {
     // const [category, setCategory] = useState(null);
     const id = navigation.getParam('kategoria_id')
     const lessons = navigation.getParam('lessons') 
-    console.log(lessons)
-
-
-
-
-
+    //console.log(lessons)
 
 
     return (
-        <ScrollView>
-            <View>
-                <Text>{id} asdfsd</Text>
-            </View>
-        </ScrollView>    
+            <>
+                <LessonsList lessons ={lessons}
+                ></LessonsList>
+            </>
 
     );
 };
 
 
 const styles = StyleSheet.create({});
-
 
 export default LessonsScreen;
 
