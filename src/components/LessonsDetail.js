@@ -6,8 +6,8 @@ import {View, Text, StyleSheet } from 'react-native';
  */
 
 const LessonsDetail = ({lesson}) =>{
-    console.log(lesson)
-    console.log('*****')
+    // console.log(lesson)
+    // console.log('*****')
     
     return (
         <View style={styles.container}>
