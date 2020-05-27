@@ -17,7 +17,7 @@ const CategoriesList = ({title, categories, navigation}) => {
                 keyExtractor={ (category) => category.kategoria_id}
                 renderItem = {( {item }) => {
                     return (
-                    <TouchableOpacity onPress={()=> navigation.navigate('Lessons', { kategoria_id: item.kategoria_id})}>
+                    <TouchableOpacity onPress={()=> navigation.navigate('Lessons', { kategoria_id: item.kategoria_id, lessons: item.lessons})}>
                         <CategoriesDetail category={item} />
                     </TouchableOpacity>
                         
