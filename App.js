@@ -57,7 +57,7 @@ const BottomTabNavigator = createBottomTabNavigator(
     Asetukset: SettingsScreen
   },
   {
-    initialRouteName: "Haku",
+    initialRouteName: "Etusivu",
     navigationOptions: ({ navigation }) => ({
     tabBarIcon: ({ focused, tintColor }) => {
       const { routeName } = navigation.state
