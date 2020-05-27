@@ -59,7 +59,20 @@
             "kuvaus": "4 viikkoa kestävä ilmainen peruskurssi. Ideana oppia ohjatusti perusteet joiden avulla meditointi onnistuu tarvittaessa myös ilman ohjausta.",
             "kestoPäivissä": 28,
             "voimassa": true,
-            "image_url": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1557258847-chinese-evergreen-houseplant-1557258690.jpg?crop=0.883xw:0.887xh;0.0849xw,0.0821xh&resize=480:*"
+            "image_url": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1557258847-chinese-evergreen-houseplant-1557258690.jpg?crop=0.883xw:0.887xh;0.0849xw,0.0821xh&resize=480:*",
+            "lessons":
+            [
+                {
+                    "nimi": "Istunto 1",
+                    "kesto": "10 minuuttia, 13 sekuntia"
+                },
+
+                {
+                    "nimi": "Istunto 2",
+                    "kesto": "11 minuuttia, 13 sekuntia"
+                }
+
+            ]
 
         },
 
