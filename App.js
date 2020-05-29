@@ -29,6 +29,7 @@ const MyTheme = {
     card: 'rgb(30, 45, 85)',
     text: 'rgb(255,255,255)',
     border: 'rgb(200, 199, 0)',
+    
   },
 };
 
@@ -97,51 +98,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-
-
-
-// //StackNavigatorit
-// const MainStack = createStackNavigator({
-//   Main: MainScreen,
-//   Lessons: LessonsScreen,
-//   Media: MediaScreen
-// },
-// {
-//   headerMode: "screen",
-//   initialRouteName: "Main"
-// })
-
-// const SearchStack = createStackNavigator({
-//   Search: SearchScreen,
-//   Media: MediaScreen
-// },
-// {
-//   headerMode: "screen",
-//   initialRouteName: "Search"
-// })
-
-
-// const DownloadsStack = createStackNavigator({
-//   Downloads: DownloadsScreen,
-//   Media: MediaScreen
-// },
-// {
-//   headerMode: "screen",
-//   initialRouteName: "Downloads"
-// })
-
-
-
-
-
-
-
-// //BottomTabNavigator, joka on ylin navigaatio täs sovelluksessa.
-// const BottomTabNavigator = createBottomTabNavigator(
-//   {
-//     Etusivu: MainStack,
-//     OmatLataukset: DownloadsStack,
-//     Haku: SearchStack,
-//     Asetukset: SettingsScreen
-//   })
