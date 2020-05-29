@@ -24,8 +24,8 @@ const MyTheme = {
   colors: {
     primary: 'rgb(30, 45, 85)',
     background: 'rgb(200, 200, 242)',
-    card: 'rgb(255, 255, 255)',
-    text: 'rgb(50, 50, 100)',
+    card: 'rgb(30, 45, 85)',
+    text: 'rgb(255,255,255)',
     border: 'rgb(200, 199, 0)',
   },
 };
@@ -36,65 +36,62 @@ const Tab = createMaterialBottomTabNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer theme={MyTheme}>
+    <NavigationContainer theme={MyTheme}
+                          >
       <Tab.Navigator>
-        <Tab.Screen name="Etusivu"
-                    options={{
-                      tabBarLabel: 'Etusivu',
-                      tabBarIcon: ({ color }) => (
-                        <Feather name="home" color={color} size={26} />
-                      )
-                    }}>
-          {()=> (
-                    <MainStack.Navigator
-                          screenOptions={{ title: 'Minun Hetkeni' }}
-                          initialRouteName="Main">
-                    <MainStack.Screen name="Main" component={MainScreen} />
-                    <MainStack.Screen name="Lessons" component={LessonsScreen} />
-                </MainStack.Navigator>
-                )}
+                  <Tab.Screen name="Etusivu"
+                              options={{
+                                tabBarLabel: 'Etusivu',
+                                tabBarIcon: ({ color }) => (
+                                  <Feather name="home" color={color} size={26} />
+                                )
+                              }}>
+                    {()=> (
+                              <MainStack.Navigator
+                                    screenOptions={{ title: 'Minun Hetkeni'}}
+                                    initialRouteName="Main">
+                              <MainStack.Screen name="Main" component={MainScreen} />
+                              <MainStack.Screen name="Lessons" component={LessonsScreen} />
+                          </MainStack.Navigator>
+                          )}
+                  </Tab.Screen>
+
+                  <Tab.Screen name="Luennot"
+                              options={{
+                                tabBarLabel: 'Luennot',
+                                tabBarIcon: ({ color }) => (
+                                  <Feather name="sun" color={color} size={26} />
+                                )
+                              }}>
+
+                    {()=> (
+                              <MainStack.Navigator
+                                    screenOptions={{ title: 'Minun Hetkeni' }}
+                                    initialRouteName="Main">
+                              <MainStack.Screen name="Main" component={MainScreen} />
+                              <MainStack.Screen name="Lessons" component={LessonsScreen} />
+                          </MainStack.Navigator>
+                          )}
+                  </Tab.Screen>
+
+                  <Tab.Screen name="Asetukset"
+                              options={{
+                                tabBarLabel: 'Asetukset',
+                                tabBarIcon: ({ color }) => (
+                                  <Feather name="settings" color={color} size={26} />
+                                )
+                              }}>
+
+
+                    {()=> (
+                              <MainStack.Navigator
+                                    screenOptions={{ title: 'Minun Hetkeni' }}
+                                    initialRouteName="Main">
+                              <MainStack.Screen name="Main" component={MainScreen} />
+                              <MainStack.Screen name="Lessons" component={LessonsScreen} />
+                          </MainStack.Navigator>
+                          )}
         </Tab.Screen>
-
-        <Tab.Screen name="Luennot"
-                    options={{
-                      tabBarLabel: 'Luennot',
-                      tabBarIcon: ({ color }) => (
-                        <Feather name="sun" color={color} size={26} />
-                      )
-                    }}>
-
-          {()=> (
-                    <MainStack.Navigator
-                          screenOptions={{ title: 'Minun Hetkeni' }}
-                          initialRouteName="Main">
-                    <MainStack.Screen name="Main" component={MainScreen} />
-                    <MainStack.Screen name="Lessons" component={LessonsScreen} />
-                </MainStack.Navigator>
-                )}
-        </Tab.Screen>
-
-        <Tab.Screen name="Asetukset"
-                    options={{
-                      tabBarLabel: 'Asetukset',
-                      tabBarIcon: ({ color }) => (
-                        <Feather name="settings" color={color} size={26} />
-                      )
-                    }}>
-
-
-          {()=> (
-                    <MainStack.Navigator
-                          screenOptions={{ title: 'Minun Hetkeni' }}
-                          initialRouteName="Main">
-                    <MainStack.Screen name="Main" component={MainScreen} />
-                    <MainStack.Screen name="Lessons" component={LessonsScreen} />
-                </MainStack.Navigator>
-                )}
-        </Tab.Screen>
-
-
-
-
       </Tab.Navigator>
     </NavigationContainer>
   );
