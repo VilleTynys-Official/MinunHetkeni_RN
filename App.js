@@ -19,6 +19,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { ScreenContainer } from 'react-native-screens';
 import { createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs'
 
+import LogoTitle from './src/components/LogoTitle';
+
 const MyTheme = {
   dark: false,
   colors: {
@@ -36,8 +38,7 @@ const Tab = createMaterialBottomTabNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer theme={MyTheme}
-                          >
+    <NavigationContainer theme={MyTheme}>
       <Tab.Navigator>
                   <Tab.Screen name="Etusivu"
                               options={{
@@ -48,11 +49,11 @@ export default function App() {
                               }}>
                     {()=> (
                               <MainStack.Navigator
-                                    screenOptions={{ title: 'Minun Hetkeni'}}
+                                    screenOptions= {{ headerTitle: (props)=> <LogoTitle/>}}
                                     initialRouteName="Main">
                               <MainStack.Screen name="Main" component={MainScreen} />
                               <MainStack.Screen name="Lessons" component={LessonsScreen} />
-                          </MainStack.Navigator>
+                              </MainStack.Navigator>
                           )}
                   </Tab.Screen>
 
@@ -70,7 +71,7 @@ export default function App() {
                                     initialRouteName="Main">
                               <MainStack.Screen name="Main" component={MainScreen} />
                               <MainStack.Screen name="Lessons" component={LessonsScreen} />
-                          </MainStack.Navigator>
+                              </MainStack.Navigator>
                           )}
                   </Tab.Screen>
 
@@ -89,7 +90,7 @@ export default function App() {
                                     initialRouteName="Main">
                               <MainStack.Screen name="Main" component={MainScreen} />
                               <MainStack.Screen name="Lessons" component={LessonsScreen} />
-                          </MainStack.Navigator>
+                              </MainStack.Navigator>
                           )}
         </Tab.Screen>
       </Tab.Navigator>
