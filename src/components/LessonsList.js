@@ -3,6 +3,8 @@ import {View, Text, StyleSheet, Image, FlatList, TouchableOpacity} from 'react-n
 import CategoriesDetail from './CategoriesDetail';
 import { ScrollView } from 'react-native-gesture-handler';
 import LessonsDetail from './LessonsDetail';
+import CategoriesList from './CategoriesList';
+import useCategories from '../hooks/useCategories';
 
 
 //komponentti "pidetty tyhmänä" >>> Näyttää kaikki lessonit jotka annetaan sisälle.
@@ -12,8 +14,12 @@ const LessonsList = ({lessons}) => {
     // console.log(lesson)
     return (
         <View style={styles.container}>
-            <Text>lista eri lessoneita:</Text>
             <FlatList
+                //CAROUSELLIN TESTAILUA ListHeaderComponenttia hyöydyntämällä:
+                // ListHeaderComponent={<CategoriesList isHorizontal={true}
+                //                                     categories={useCategories}
+                //                                     ></CategoriesList>}
+
                 data={lessons}
                 keyExtractor={ (lesson) => lesson.nimi}
                 renderItem = {( {item }) => {
@@ -28,14 +34,8 @@ const LessonsList = ({lessons}) => {
 
 
 const styles = StyleSheet.create({
-    title: {
-        fontSize: 25,
-        fontWeight: 'bold',
-        marginLeft: 10,
-        marginBottom: 5,
-    },
     container: {
-        marginBottom: 30,
+        margin:10,
     }
 
 });
