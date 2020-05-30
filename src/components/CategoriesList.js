@@ -4,16 +4,16 @@ import CategoriesDetail from './CategoriesDetail';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native'
 //komponentti "pidetty tyhmänä" >>> Näyttää kaikki meditaatiot jotka annetaan sisälle.
+//lisätty propsi "enableHorizontal" joka kääntää Flatlistin horisontaaliseksi.
 
-
-const CategoriesList = ({title, categories, navigation}) => {
+const CategoriesList = ({title, categories, navigation, isHorizontal}) => {
     navigation = useNavigation();
 
     return (
         <View style={styles.container}>
             <Text style= {styles.title}> {title}</Text>
             <FlatList 
-                //horizontal
+                horizontal={isHorizontal}   //voidaan säätää propsilla suunta.
                 nestedScrollEnabled={false}
                 data={categories}
                 keyExtractor={ (category) => category.kategoria_id}
