@@ -2,11 +2,13 @@ import React from 'react';
 import {View, Text, StyleSheet, Image, FlatList, TouchableOpacity} from 'react-native';
 import CategoriesDetail from './CategoriesDetail';
 import { ScrollView } from 'react-native-gesture-handler';
-import {withNavigation} from 'react-navigation'; //tää tuo navigoinnnin (otetaan käyttöön exportissa)
+import { useNavigation } from '@react-navigation/native'
 //komponentti "pidetty tyhmänä" >>> Näyttää kaikki meditaatiot jotka annetaan sisälle.
 
 
 const CategoriesList = ({title, categories, navigation}) => {
+    navigation = useNavigation();
+
     return (
         <View style={styles.container}>
             <Text style= {styles.title}> {title}</Text>
@@ -17,11 +19,10 @@ const CategoriesList = ({title, categories, navigation}) => {
                 keyExtractor={ (category) => category.kategoria_id}
                 renderItem = {( {item }) => {
                     return (
-                    <TouchableOpacity onPress={()=> navigation.navigate('Lessons', { kategoria_id: item.kategoria_id, lessons: item.lessons})}>
+                    <TouchableOpacity onPress={()=> navigation.navigate('Lessons', {
+                        kategoria_id: item.kategoria_id, lessons: item.lessons})}>
                         <CategoriesDetail category={item} />
                     </TouchableOpacity>
-                        
-
                     )
                 }}
             />
@@ -44,4 +45,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default withNavigation(CategoriesList);
+export default CategoriesList;

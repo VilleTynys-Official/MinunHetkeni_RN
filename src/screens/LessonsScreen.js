@@ -15,12 +15,9 @@ import LessonsList from '../components/LessonsList';
 
 
 
-const LessonsScreen = ({navigation}) => {
+const LessonsScreen = ({route, navigation}) => {
     // const [category, setCategory] = useState(null);
-    const id = navigation.getParam('kategoria_id')
-    const lessons = navigation.getParam('lessons') 
-    //console.log(lessons)
-
+    const {lessons} =route.params;
 
     return (
             <View>

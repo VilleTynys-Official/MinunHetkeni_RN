@@ -2,14 +2,13 @@ import React from 'react';
 import {View, Text, StyleSheet, Image, FlatList, TouchableOpacity} from 'react-native';
 import CategoriesDetail from './CategoriesDetail';
 import { ScrollView } from 'react-native-gesture-handler';
-import {withNavigation} from 'react-navigation'; //tää tuo navigoinnnin (otetaan käyttöön exportissa)
 import LessonsDetail from './LessonsDetail';
 
 
 //komponentti "pidetty tyhmänä" >>> Näyttää kaikki lessonit jotka annetaan sisälle.
 
 
-const LessonsList = ({lessons, navigation}) => {
+const LessonsList = ({lessons}) => {
     // console.log(lesson)
     return (
         <View style={styles.container}>
@@ -19,9 +18,7 @@ const LessonsList = ({lessons, navigation}) => {
                 keyExtractor={ (lesson) => lesson.nimi}
                 renderItem = {( {item }) => {
                     return (
-                        <TouchableOpacity onPress={()=>navigation.navigate('Media')}>
                             <LessonsDetail lesson ={item}></LessonsDetail>
-                        </TouchableOpacity>
                     )
                 }}    
             />
@@ -44,4 +41,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default withNavigation(LessonsList);
+export default LessonsList;
