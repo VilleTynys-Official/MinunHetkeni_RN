@@ -50,7 +50,7 @@ export default function App() {
                               }}>
                     {()=> (
                               <MainStack.Navigator
-                                    screenOptions= {{ headerTitle: (props)=> <LogoTitle/>}}
+                                    screenOptions= {{ headerTitle: ()=> <LogoTitle/>}}
                                     initialRouteName="Main">
                               <MainStack.Screen name="Main" component={MainScreen} />
                               <MainStack.Screen name="Lessons" component={LessonsScreen} />
@@ -68,7 +68,7 @@ export default function App() {
 
                     {()=> (
                               <MainStack.Navigator
-                                    screenOptions={{ title: 'Minun Hetkeni' }}
+                                    screenOptions= {{ headerTitle: ()=> <LogoTitle/>}}
                                     initialRouteName="Main">
                               <MainStack.Screen name="Main" component={MainScreen} />
                               <MainStack.Screen name="Lessons" component={LessonsScreen} />
@@ -87,7 +87,7 @@ export default function App() {
 
                     {()=> (
                               <MainStack.Navigator
-                                    screenOptions={{ title: 'Minun Hetkeni' }}
+                                    screenOptions= {{ headerTitle: ()=> <LogoTitle/>}}
                                     initialRouteName="Main">
                               <MainStack.Screen name="Main" component={MainScreen} />
                               <MainStack.Screen name="Lessons" component={LessonsScreen} />
