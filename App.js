@@ -3,6 +3,7 @@ import MainScreen from './src/screens/MainScreen';
 import SearchScreen from './src/screens/SearchScreen';
 import SettingsScreen from './src/screens/SettingsScreen';
 import LessonsScreen from './src/screens/LessonsScreen';
+import LessonsScreenTab from './src/screens/LessonsScreenTab';
 import MediaScreen from './src/screens/MediaScreen';
 import SplashScreen from './src/screens/SplashScreen';
 import DownloadsScreen from './src/screens/DownloadsScreen';
@@ -69,9 +70,8 @@ export default function App() {
                     {()=> (
                               <MainStack.Navigator
                                     screenOptions= {{ headerTitle: ()=> <LogoTitle/>}}
-                                    initialRouteName="Main">
-                              <MainStack.Screen name="Main" component={MainScreen} />
-                              <MainStack.Screen name="Lessons" component={LessonsScreen} />
+                                    initialRouteName="LessonsTab">
+                              <MainStack.Screen name="LessonsTab" component={LessonsScreenTab} />
                               </MainStack.Navigator>
                           )}
                   </Tab.Screen>
