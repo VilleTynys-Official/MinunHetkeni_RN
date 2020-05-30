@@ -8,9 +8,18 @@ import {MaterialIcons} from '@expo/vector-icons';
 //TODO:Päivitä oikea logo..
 export default function LogoTitle() {
     return (
-      <Image
-        style={{ width: 50, height: 50, alignSelf: 'flex-end' }}
-        source={require('../imgs/kategoria1.png')}
-      />
+        <Text>Minun Hetkeni</Text>
+    //   <Image
+    //     style={{ width: 300, height: 50, alignSelf: 'center' }}
+    //     source={require('../imgs/MinunHetkeniLogo.png')}
+    //   />
     );
   }
+
+  const style= StyleSheet.create({
+      iconstyle: {
+          fontSize: 20,
+          fontWeight: "bold",
+          fontFamily: 
+      }
+  })
