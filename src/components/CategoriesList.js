@@ -3,8 +3,8 @@ import {View, Text, StyleSheet, Image, FlatList, TouchableOpacity} from 'react-n
 import CategoriesDetail from './CategoriesDetail';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native'
-//komponentti "pidetty tyhmänä" >>> Näyttää kaikki meditaatiot jotka annetaan sisälle.
-//lisätty propsi "enableHorizontal" joka kääntää Flatlistin horisontaaliseksi.
+//komponentti "pidetty tyhmänä" >>> Näyttää kaikki kategoriat jotka annetaan sisälle.
+//Propsit: isHorizontal"  kääntää Flatlistin horisontaaliseksi.
 
 const CategoriesList = ({title, categories, navigation, isHorizontal}) => {
     navigation = useNavigation();
