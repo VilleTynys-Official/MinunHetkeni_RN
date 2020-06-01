@@ -19,8 +19,10 @@ const CategoriesList = ({title, categories, navigation, isHorizontal}) => {
                 keyExtractor={ (category) => category.kategoria_id}
                 renderItem = {( {item }) => {
                     return (
-                    <TouchableOpacity onPress={()=> navigation.navigate('Lessons', {
-                        kategoria_id: item.kategoria_id, lessons: item.lessons})}>
+                    <TouchableOpacity onPress={()=> {
+                        console.log('esim täs kohtaa voi päivittää lessons staten provideriin (luento sivu saa tiedon mistä aloittaa carousel..)');
+                        // nyt tieto viedään propseina, mut provider vois toimia paremmin:
+                            navigation.navigate('Lessons', {kategoria_id: item.kategoria_id, lessons: item.lessons})}}>
                         <CategoriesDetail category={item} />
                     </TouchableOpacity>
                     )
