@@ -11,14 +11,20 @@ import useCategories from '../hooks/useCategories';
 
 
 const LessonsList = ({lessons}) => {
+    const categories= useCategories()
     // console.log(lesson)
     return (
         <View style={styles.container}>
             <FlatList
-                //CAROUSELLIN TESTAILUA ListHeaderComponenttia hyöydyntämällä:
-                // ListHeaderComponent={<CategoriesList isHorizontal={true}
-                //                                     categories={useCategories}
-                //                                     ></CategoriesList>}
+                // //CAROUSELLIN TESTAILUA ListHeaderComponenttia hyödyntämällä.
+                // //
+                // ListHeaderComponent={()=>{
+                //                             return(                                             
+                //                                     <CategoriesList isHorizontal={true}
+                //                                         categories={categories}/>
+                //                                 )
+                //                         }}
+                // ListHeaderComponentStyle= {{height: 300}}
 
                 data={lessons}
                 keyExtractor={ (lesson) => lesson.nimi}
