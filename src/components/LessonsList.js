@@ -17,7 +17,9 @@ const LessonsList = ({lessons}) => {
         <View style={styles.container}>
             <FlatList
                 // //CAROUSELLIN TESTAILUA ListHeaderComponenttia hyödyntämällä.
-                // //
+                // //Toimii periaatteessa, mutta jotenkin täytyisi silti luoda "sivunvaihto".
+                // //Kokeillaan karusellia omana erillisena komponenttina (joka otetaan ehkä sit täs käyttöön)
+                //
                 // ListHeaderComponent={()=>{
                 //                             return(                                             
                 //                                     <CategoriesList isHorizontal={true}
