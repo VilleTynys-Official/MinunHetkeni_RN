@@ -9,17 +9,11 @@ import SplashScreen from './src/screens/SplashScreen';
 import DownloadsScreen from './src/screens/DownloadsScreen';
 
 
-//STICHING TOGETHER THE NAVIGATORS
-
-
-
-
 import * as React from 'react';
 import { NavigationContainer} from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { ScreenContainer } from 'react-native-screens';
 import { createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs'
-
 import LogoTitle from './src/components/LogoTitle';
 
 const MyTheme = {
@@ -88,9 +82,8 @@ export default function App() {
                     {()=> (
                               <MainStack.Navigator
                                     screenOptions= {{ headerTitle: ()=> <LogoTitle/>}}
-                                    initialRouteName="Main">
-                              <MainStack.Screen name="Main" component={MainScreen} />
-                              <MainStack.Screen name="Lessons" component={LessonsScreen} />
+                                    initialRouteName="Settings">
+                              <MainStack.Screen name="Settings" component={SettingsScreen} />
                               </MainStack.Navigator>
                           )}
         </Tab.Screen>
