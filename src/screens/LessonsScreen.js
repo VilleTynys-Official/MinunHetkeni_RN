@@ -4,19 +4,19 @@ import useCategories from '../hooks/useCategories';
 import CategoriesList from '../components/CategoriesList';
 import { FlatList } from 'react-native-gesture-handler';
 import LessonsList from '../components/LessonsList';
+import CategoriesCarousel from '../components/CategoriesCarousel';
 
 /**TODO
  * 1 haetaan valitun kategorian lessonien tiedot. OK
- * 2 renderöidään ne listaksi (LessonsList komponentilla.)
- * 3 lisätään navigointi mediaScreeniin (LessonsList komponenttiin?)
+ * 2 renderöidään ne listaksi (LessonsList komponentilla.) OK
+ * 
  */
 
-//lessonssit saadaan propsina mainScreenistä. Sitten ku api on pystyssä nii voidaan myös hakea id:llä apista..
+//lessonssit saadaan propsina CategoriesLististä, myöhemmin ehkä Providerilla.
 
 
 
 const LessonsScreen = ({route, navigation}) => {
-    // const [category, setCategory] = useState(null);
     const {lessons} =route.params;
 
     return (
