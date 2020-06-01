@@ -11,8 +11,6 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 const MainScreen = () => {
     const categories = useCategories();
-    // console.log(categories);
-    // console.log('**********')
 
 
     //filtteröi sen mukaan onko voimassa true vai false.
