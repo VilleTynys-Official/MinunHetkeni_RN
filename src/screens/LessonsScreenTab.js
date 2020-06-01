@@ -4,23 +4,40 @@ import useCategories from '../hooks/useCategories';
 import CategoriesList from '../components/CategoriesList';
 import { FlatList } from 'react-native-gesture-handler';
 import LessonsList from '../components/LessonsList';
-
+import useNavigation from '@react-navigation/native';
+import CategoriesCarousel from '../components/CategoriesCarousel';
 /**TODO
- * 1 haetaan valitun kategorian lessonien tiedot. OK
- * 2 renderöidään ne listaksi (LessonsList komponentilla.)
- * 3 lisätään navigointi mediaScreeniin (LessonsList komponenttiin?)
+ * 1 haetaan KAIKKIEN kategorioiden tiedot useCategories avulla. OK!
+ * 2 Näytetään KAIKKI carousel viewssä (esim.  pelkät kategorian nimet tai kuvat)
+ * 3 Päivitetään lessonit alle sen mukaisesti mikä kategoria on näkyvillä karusellissa.
+ * 4 Yhdistetään main pagen navigointiin (et sieltä valinta tuo tänne.)
+ * 
  */
 
-//lessonssit saadaan propsina mainScreenistä. Sitten ku api on pystyssä nii voidaan myös hakea id:llä apista..
-
-
-
-const LessonsScreenTab = ({route, navigation}) => {
+const LessonsScreenTab = (navigation) => {
     // const [category, setCategory] = useState(null);
-    const {lessons} =route.params;
+    const categories = useCategories();
+    const [lessons, setLessons] = useState([]);
 
+
+    //TODO: Opettele tämä hyvin!!!!!
+    // ES6 MÄPPÄÄMINEN: uusi array, jossa on kaikki funktion perusteella mäpätyt jäsenet.
+    // eli siis näin voidaan filtteröidä JSON datasta "key" arvoja hyödyntämällä.
+    // console.log(categories.map(JSONkey => JSONkey.nimi ))
+    const images = categories.map(JSONkey => JSONkey.image_url)
+    console.log(images)    
+
+
+
+
+
+    //TODO: provider joka tuo lessonin staten?
     return (
             <View>
+                {/* <CategoriesCarousel
+                                isHorizontal={true}
+                                setLessons ={()=>setLessons()}
+                                categories={categories}/> */}
                 <LessonsList lessons ={lessons}
                 />
             </View>
@@ -32,23 +49,3 @@ const LessonsScreenTab = ({route, navigation}) => {
 const styles = StyleSheet.create({});
 
 export default LessonsScreenTab;
-
-
-
-
-    // //haetaan id avulla tiedot lessoneista (databasesta)     
-    // const categories = useCategories();
-    // // console.log(categories);
-    // // console.log('**********')
-    // //const lessons = categories.filter(category => category.kategoria_id == id)
-
-
-    // //filtteröi id:n avulla
-    // const filterCategoriesByid = (kategoria_id) =>{
-    //     // voimassa === true | false    ...tämä siis riippuu aina siitä mikä objekti on kyseessä.
-    //     return categories.filter(category => {
-    //         //console.log(category.voimassa)
-    //         return category.kategoria_id === id;
-    //         }
-    //     )};
-    //     console.log(category)
