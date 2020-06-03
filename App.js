@@ -32,7 +32,7 @@ const MainStack = createStackNavigator();
 // const LessonsStack = createStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
 
-export default function App() {
+export default App= ()=> {
   return (
     <NavigationContainer theme={MyTheme}>
       <Tab.Navigator>
