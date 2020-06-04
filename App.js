@@ -7,6 +7,7 @@ import LessonsScreenTab from './src/screens/LessonsScreenTab';
 import MediaScreen from './src/screens/MediaScreen';
 import SplashScreen from './src/screens/SplashScreen';
 import DownloadsScreen from './src/screens/DownloadsScreen';
+import {Provider as LessonsContext} from './src/context/LessonsContext';
 
 
 import * as React from 'react';
@@ -34,60 +35,62 @@ const Tab = createMaterialBottomTabNavigator();
 
 export default App= ()=> {
   return (
-    <NavigationContainer theme={MyTheme}>
-      <Tab.Navigator>
-                  <Tab.Screen name="Etusivu"
-                              options={{
-                                tabBarLabel: 'Etusivu',
-                                tabBarIcon: ({ color }) => (
-                                  <Feather name="home" color={color} size={26} />
-                                )
-                              }}>
-                    {()=> (
-                              <MainStack.Navigator
-                                    screenOptions= {{ headerTitle: ()=> <LogoTitle/>}}
-                                    initialRouteName="Main">
-                              <MainStack.Screen name="Main" component={MainScreen} />
-                              <MainStack.Screen name="Lessons" component={LessonsScreen} />
-                              </MainStack.Navigator>
-                          )}
-                  </Tab.Screen>
+    <LessonsContext>
+      <NavigationContainer theme={MyTheme}>
+        <Tab.Navigator>
+                    <Tab.Screen name="Etusivu"
+                                options={{
+                                  tabBarLabel: 'Etusivu',
+                                  tabBarIcon: ({ color }) => (
+                                    <Feather name="home" color={color} size={26} />
+                                  )
+                                }}>
+                      {()=> (
+                                <MainStack.Navigator
+                                      screenOptions= {{ headerTitle: ()=> <LogoTitle/>}}
+                                      initialRouteName="Main">
+                                <MainStack.Screen name="Main" component={MainScreen} />
+                                <MainStack.Screen name="Lessons" component={LessonsScreen} />
+                                </MainStack.Navigator>
+                            )}
+                    </Tab.Screen>
 
-                  <Tab.Screen name="Luennot"
-                              options={{
-                                tabBarLabel: 'Luennot',
-                                tabBarIcon: ({ color }) => (
-                                  <Feather name="sun" color={color} size={26} />
-                                )
-                              }}>
+                    <Tab.Screen name="Luennot"
+                                options={{
+                                  tabBarLabel: 'Luennot',
+                                  tabBarIcon: ({ color }) => (
+                                    <Feather name="sun" color={color} size={26} />
+                                  )
+                                }}>
 
-                    {()=> (
-                              <MainStack.Navigator
-                                    screenOptions= {{ headerTitle: ()=> <LogoTitle/>}}
-                                    initialRouteName="LessonsTab">
-                              <MainStack.Screen name="LessonsTab" component={LessonsScreenTab} />
-                              </MainStack.Navigator>
-                          )}
-                  </Tab.Screen>
+                      {()=> (
+                                <MainStack.Navigator
+                                      screenOptions= {{ headerTitle: ()=> <LogoTitle/>}}
+                                      initialRouteName="LessonsTab">
+                                <MainStack.Screen name="LessonsTab" component={LessonsScreenTab} />
+                                </MainStack.Navigator>
+                            )}
+                    </Tab.Screen>
 
-                  <Tab.Screen name="Asetukset"
-                              options={{
-                                tabBarLabel: 'Asetukset',
-                                tabBarIcon: ({ color }) => (
-                                  <Feather name="settings" color={color} size={26} />
-                                )
-                              }}>
+                    <Tab.Screen name="Asetukset"
+                                options={{
+                                  tabBarLabel: 'Asetukset',
+                                  tabBarIcon: ({ color }) => (
+                                    <Feather name="settings" color={color} size={26} />
+                                  )
+                                }}>
 
 
-                    {()=> (
-                              <MainStack.Navigator
-                                    screenOptions= {{ headerTitle: ()=> <LogoTitle/>}}
-                                    initialRouteName="Settings">
-                              <MainStack.Screen name="Settings" component={SettingsScreen} />
-                              </MainStack.Navigator>
-                          )}
-        </Tab.Screen>
-      </Tab.Navigator>
-    </NavigationContainer>
+                      {()=> (
+                                <MainStack.Navigator
+                                      screenOptions= {{ headerTitle: ()=> <LogoTitle/>}}
+                                      initialRouteName="Settings">
+                                <MainStack.Screen name="Settings" component={SettingsScreen} />
+                                </MainStack.Navigator>
+                            )}
+          </Tab.Screen>
+        </Tab.Navigator>
+      </NavigationContainer>
+    </LessonsContext>
   );
 }
