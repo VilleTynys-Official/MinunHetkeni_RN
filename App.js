@@ -17,6 +17,17 @@ import { ScreenContainer } from 'react-native-screens';
 import { createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs'
 import LogoTitle from './src/components/LogoTitle';
 
+
+/**
+ * VÄRIPALETTI v.1:
+ * FCBABA (iho) >> rgb(252, 186, 186)
+ * 7C747B (harmaa) >> rgb(124, 116, 123)
+ * 322A5C (sininen) >> rgb(50, 42, 92)
+ * FFFFFF (valkoinen) >> rgb(255,255,255)
+ * 
+ * */
+
+
 const MyTheme = {
   dark: false,
   colors: {
