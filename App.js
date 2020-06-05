@@ -20,25 +20,12 @@ import LogoTitle from './src/components/LogoTitle';
 
 /**
  * VÄRIPALETTI v.1:
- * FCBABA (iho) >> rgb(252, 186, 186)
- * 7C747B (harmaa) >> rgb(124, 116, 123)
- * 322A5C (sininen) >> rgb(50, 42, 92)
- * FFFFFF (valkoinen) >> rgb(255,255,255)
+ * FCBABA (iho) >> "rgb(252, 186, 186)"
+ * 7C747B (harmaa) >> "rgb(124, 116, 123)"
+ * 322A5C (sininen) >> "rgb(50, 42, 92)"
+ * FFFFFF (valkoinen) >> "rgb(255,255,255)"
  * 
  * */
-
-
-// const MyTheme = {
-//   dark: false,
-//   colors: {
-//     primary: 'rgb(30, 45, 85)',
-//     background: 'rgb(200, 200, 242)',
-//     card: 'rgb(30, 45, 85)',
-//     text: 'rgb(255,255,255)',
-//     border: 'rgb(200, 199, 0)',
-    
-//   },
-// };
 
 
 const MyTheme = {
@@ -52,7 +39,6 @@ const MyTheme = {
     
   },
 };
-const tabColor = [{focused: true, color: 'blue'}] //asettaa iconien värit
 
 
 const MainStack = createStackNavigator();
@@ -63,12 +49,17 @@ export default App= ()=> {
   return (
     <LessonsContext>
       <NavigationContainer theme={MyTheme}>
-        <Tab.Navigator>
+          <Tab.Navigator
+            activeColor="rgb(252, 186, 186)"
+            inactiveColor= "rgb(124, 116, 123)"
+            // barStyle={{ backgroundColor: '#694fad' }}
+            // initialRouteName="Home"
+          >
                     <Tab.Screen name="Etusivu"
                                 options={{
                                   tabBarLabel: 'Etusivu',
                                   tabBarIcon: ({ color }) => (
-                                    <Feather name="home" color={color} size={26} />
+                                    <Feather name="home" color={color} size={23} />
                                   )
                                 }}>
                       {()=> (
@@ -85,7 +76,7 @@ export default App= ()=> {
                                 options={{
                                   tabBarLabel: 'Luennot',
                                   tabBarIcon: ({ color }) => (
-                                    <Feather name="sun" color={color} size={26} />
+                                    <Feather name="sun" color={color} size={23} />
                                   )
                                 }}>
 
@@ -102,7 +93,7 @@ export default App= ()=> {
                                 options={{
                                   tabBarLabel: 'Asetukset',
                                   tabBarIcon: ({ color }) => (
-                                    <Feather name="settings" color={color} size={26} />
+                                    <Feather name="settings" color={color} size={23} />
                                   )
                                 }}>
 
