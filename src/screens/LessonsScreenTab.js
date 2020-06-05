@@ -7,6 +7,9 @@ import LessonsList from '../components/LessonsList';
 import useNavigation from '@react-navigation/native';
 import CategoriesCarousel from '../components/CategoriesCarousel';
 import { Context as LessonsContext} from '../context/LessonsContext';
+import GallerySwiper from 'react-native-gallery-swiper';
+
+
 
 /**TODO
  * 1 haetaan KAIKKIEN kategorioiden tiedot useCategories avulla. OK!
@@ -29,17 +32,39 @@ const LessonsScreenTab = (navigation) => {
 
     console.log(chosenLesson)
 
-    //TODO: provider joka tuo lessonin staten?
+
     return (
-            <View>
+            <>
+                <GallerySwiper
+                   images={[
+                    { source: require("../imgs/kategoria1.png"),
+                    // Version *1.5.0 update (or greater versions):
+                    // An alternative to the dimensions field.
+                    // This will also be acceptable.
+                    width: 1080,
+                    height: 1920 },
+
+                    { source: require("../imgs/kategoria2.png"),
+                    // Version *1.5.0 update (or greater versions):
+                    // An alternative to the dimensions field.
+                    // This will also be acceptable.
+                    width: 1080,
+                    height: 1920 },
+                    
+                    ]} 
+                   >
                 <Text>{chosenLesson}</Text>
                 <Button title='vaihda lesson'
                         onPress={()=>setChosenLesson('lkj')}></Button>
-            </View>
+               
+                </GallerySwiper>
+            </>
     );
 };
 
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+
+});
 
 export default LessonsScreenTab;
