@@ -4,7 +4,6 @@ import CategoriesDetail from './CategoriesDetail';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native'
 //komponentti "pidetty tyhmänä" >>> Näyttää kaikki kategoriat jotka annetaan sisälle.
-//Propsit: isHorizontal"  kääntää Flatlistin horisontaaliseksi.
 
 const CategoriesList = ({title, categories, navigation, isHorizontal}) => {
     navigation = useNavigation();
