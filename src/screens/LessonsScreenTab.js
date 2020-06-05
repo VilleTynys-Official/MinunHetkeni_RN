@@ -7,7 +7,6 @@ import LessonsList from '../components/LessonsList';
 import useNavigation from '@react-navigation/native';
 import CategoriesCarousel from '../components/CategoriesCarousel';
 import { Context as LessonsContext} from '../context/LessonsContext';
-import GallerySwiper from 'react-native-gallery-swiper';
 
 
 
@@ -35,36 +34,17 @@ const LessonsScreenTab = (navigation) => {
 
     return (
             <>
-                <GallerySwiper
-                   images={[
-                    { source: require("../imgs/kategoria1.png"),
-                    // Version *1.5.0 update (or greater versions):
-                    // An alternative to the dimensions field.
-                    // This will also be acceptable.
-                    width: 1080,
-                    height: 1920 },
-
-                    { source: require("../imgs/kategoria2.png"),
-                    // Version *1.5.0 update (or greater versions):
-                    // An alternative to the dimensions field.
-                    // This will also be acceptable.
-                    width: 1080,
-                    height: 1920 },
-                    
-                    ]} 
-                   >
+                <CategoriesCarousel/>
                 <Text>{chosenLesson}</Text>
                 <Button title='vaihda lesson'
                         onPress={()=>setChosenLesson('lkj')}></Button>
                
-                </GallerySwiper>
             </>
     );
 };
 
 
 const styles = StyleSheet.create({
-
 });
 
 export default LessonsScreenTab;
