@@ -28,17 +28,32 @@ import LogoTitle from './src/components/LogoTitle';
  * */
 
 
+// const MyTheme = {
+//   dark: false,
+//   colors: {
+//     primary: 'rgb(30, 45, 85)',
+//     background: 'rgb(200, 200, 242)',
+//     card: 'rgb(30, 45, 85)',
+//     text: 'rgb(255,255,255)',
+//     border: 'rgb(200, 199, 0)',
+    
+//   },
+// };
+
+
 const MyTheme = {
   dark: false,
   colors: {
-    primary: 'rgb(30, 45, 85)',
-    background: 'rgb(200, 200, 242)',
-    card: 'rgb(30, 45, 85)',
-    text: 'rgb(255,255,255)',
+    primary: 'rgb(50, 42, 92)',
+    background: 'rgb(220, 220, 242)',
+    card: 'rgb(50, 42, 92)',
+    text: 'rgb(252, 186, 186)',
     border: 'rgb(200, 199, 0)',
     
   },
 };
+const tabColor = [{focused: true, color: 'blue'}] //asettaa iconien värit
+
 
 const MainStack = createStackNavigator();
 // const LessonsStack = createStackNavigator();
