@@ -34,7 +34,6 @@ const LessonsScreenTab = (navigation) => {
 
     return (
             <>
-                <CategoriesCarousel/>
                 <Text>{chosenLesson}</Text>
                 <Button title='vaihda lesson'
                         onPress={()=>setChosenLesson('lkj')}></Button>
