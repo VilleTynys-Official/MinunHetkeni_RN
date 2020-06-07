@@ -1,9 +1,13 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import CategoriesCarouselCustom from '../components/CategoriesCarouselCustom';
 
 const SettingsScreen = () => {
     return (
-        <Text style={StyleSheet.create({ fontSize: 50})} >SettingsScreen</Text>
+       <View> 
+        <Text style={StyleSheet.create({ fontSize: 10})} >SettingsScreen</Text>
+        <CategoriesCarouselCustom></CategoriesCarouselCustom>
+        </View>
     )
 };
 
