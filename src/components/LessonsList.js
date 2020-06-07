@@ -21,11 +21,11 @@ const LessonsList = ({lessons}) => {
                 // //Toimii periaatteessa, mutta jotenkin täytyisi silti luoda "sivunvaihto".
                 // //Kokeillaan karusellia omana erillisena komponenttina (joka otetaan ehkä sit täs käyttöön)
                 //
-                ListHeaderComponent={()=>{
-                                            return(
-                                                    <CategoriesCarousel categories={categories}/>
-                                                )
-                                        }}
+                // ListHeaderComponent={()=>{
+                //                             return(
+                //                                     <CategoriesCarousel categories={categories}/>
+                //                                 )
+                //                         }}
                 ListHeaderComponentStyle= {{height: 300}}
 
                 data={lessons}
