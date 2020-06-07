@@ -5,6 +5,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 import LessonsDetail from './LessonsDetail';
 import CategoriesList from './CategoriesList';
 import useCategories from '../hooks/useCategories';
+import CategoriesCarousel from './CategoriesCarousel';
 
 
 //komponentti "pidetty tyhmänä" >>> Näyttää kaikki lessonit jotka annetaan sisälle.
@@ -20,13 +21,12 @@ const LessonsList = ({lessons}) => {
                 // //Toimii periaatteessa, mutta jotenkin täytyisi silti luoda "sivunvaihto".
                 // //Kokeillaan karusellia omana erillisena komponenttina (joka otetaan ehkä sit täs käyttöön)
                 //
-                // ListHeaderComponent={()=>{
-                //                             return(                                             
-                //                                     <CategoriesList isHorizontal={true}
-                //                                         categories={categories}/>
-                //                                 )
-                //                         }}
-                // ListHeaderComponentStyle= {{height: 300}}
+                ListHeaderComponent={()=>{
+                                            return(
+                                                    <CategoriesCarousel categories={categories}/>
+                                                )
+                                        }}
+                ListHeaderComponentStyle= {{height: 300}}
 
                 data={lessons}
                 keyExtractor={ (lesson) => lesson.nimi}
