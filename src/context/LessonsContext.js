@@ -21,7 +21,7 @@ const lessonsReducer = (state, action) => {
 
 //actionit
 const setChosenLesson = dispatch =>(lesson) => {
-    console.log(lesson)
+    // console.log(lesson)
     dispatch ({ type: 'set_chosen_lesson', payload: lesson });
 };
 
