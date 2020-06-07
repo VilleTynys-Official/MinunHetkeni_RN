@@ -25,9 +25,12 @@
     "react-native-reanimated": "~1.7.0",
     "react-native-safe-area-context": "0.7.3",
     "react-native-screens": "~2.2.0",
+    "react-native-snap-carousel": "^3.9.1",
     "react-native-spring-carousel": "^0.3.4",
     "react-native-swiper-flatlist": "^2.0.4",
-    "react-native-web": "~0.11.7"
+    "react-native-web": "~0.11.7",
+    "react-slick": "^0.26.1",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "babel-preset-expo": "~8.1.0",
