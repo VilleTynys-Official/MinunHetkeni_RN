@@ -32,19 +32,7 @@ const CategoriesCarousel = ({categories}) =>{
                 images={
 
                     [
-                    { source: require("../imgs/kategoria1.png"),
-                    // Version *1.5.0 update (or greater versions):
-                    // An alternative to the dimensions field.
-                    // This will also be acceptable.
-                    width: 1080,
-                    height: 1920 },
-
-                    { source: require("../imgs/kategoria2.png"),
-                    // Version *1.5.0 update (or greater versions):
-                    // An alternative to the dimensions field.
-                    // This will also be acceptable.
-                    width: 1080,
-                    height: 1920 },
+                    {source: images}
                     ]
                     
                     }>
