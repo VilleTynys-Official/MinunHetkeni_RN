@@ -14,11 +14,7 @@ import {View, Button, Text, StyleSheet, ScrollView} from 'react-native';
  * .
 */
 
-const CategoriesCarousel = ({categories}) =>{
-    // useEffect(()=>{
-    //     const image_url = categories.map(JSONKEY => JSONKEY.image_url)
-    // })
-    
+const CategoriesCarousel = ({categories}) =>{    
     const images = categories.map(JSONKEY => JSONKEY.image_url)
     console.log(images)
 
