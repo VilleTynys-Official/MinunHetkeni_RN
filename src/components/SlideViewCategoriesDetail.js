@@ -1,8 +1,9 @@
 import React from 'react';
 import {View, Image, Text, StyleSheet } from 'react-native';
+import { Value } from 'react-native-reanimated';
 
 /**
- * Komponentti kategorioiden muotoiluun.
+ * Komponentti SlideViewn kategorioiden muotoiluun.
  */
 
 const SlideViewCategoriesDetail = ({category}) =>{
@@ -14,7 +15,7 @@ const SlideViewCategoriesDetail = ({category}) =>{
                 <Image source={{uri: category.image_url}}
                         style={styles.image} />
             </View>
-            <View style={{flex:1}}>
+            <View style={styles.textContainer}>
                 <Text style={styles.heading}>{category.nimi}</Text>
                 <Text style={styles.kestoText}>Kurssin kesto: {category.kestoPäivissä} päivää</Text>
                 <Text style={styles.infoText}>{category.kuvaus}</Text>
@@ -27,31 +28,44 @@ const SlideViewCategoriesDetail = ({category}) =>{
 
 // justifyContent, Flexbox
 const styles = StyleSheet.create({
+    container:{
+        margin: 0,
+        flexDirection: 'column',
+        flex: 1
+    },
+    
     image:{
-        width: 100,
+        width: 250,
         height: 100,
-        borderRadius: 10,
-        flexGrow: 1, ///venyttää imagen tekstiä mukaillen.
+        borderRadius: 20,
+        flexGrow: 1, ///venyttää imagen koko flexiin.
+    },
+
+    textContainer:{
+        marginTop: 10,
+        flex: 1,
+        alignItems: 'center'
+        // justifyContent: 'center',
+        
+        
 
     },
+
     heading:{
         fontSize:20,
-        textAlign: 'left',
+        // textAlign: 'left',
         fontWeight: "bold"
     },
 
     infoText:{
-        textAlign: 'left',
+        // textAlign: 'left',
     },
     kestoText:{
-        textAlign: 'left',
+        // textAlign: 'left',
         marginBottom:5
-    },
-
-    container:{
-        margin: 15,
-        flexDirection: 'column'
     }
+
+
 });
 
 export default SlideViewCategoriesDetail;
