@@ -11,7 +11,10 @@ import SlideViewCategoriesDetail from '../components/SlideViewCategoriesDetail';
  * Näyttää kuvat kaikista kategorioista (halutussa muodossa), jotka annetaan sisälle. OK
  * Sisältää mahdollisuuden hyödyntää myös categorioista muitakin tietoja OK
  * 
- * TODO:myöhemmin catregories vaan propsina sisälle, tai ehkä jopa suoraan vaan arrey jossa imaget?
+ * TODO:
+ * 1 styling kuntoon
+ * 2 
+ * myöhemmin catregories vaan propsina sisälle, tai ehkä jopa suoraan vaan arrey jossa imaget?
 */
 
 const CategoriesSlideView = () => {
@@ -19,17 +22,6 @@ const CategoriesSlideView = () => {
     const categories = useCategories();
     const images = categories.map(image => image.image_url);
     // console.log(images);
-
-
-
-    const _renderItem = ({ item }) => {
-        console.log(item)
-        return (
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                <Text style={{ color: '#fff' }} >{item.nimi}</Text>
-            </View>
-        )
-    }
 
     return (
         <SafeAreaView
