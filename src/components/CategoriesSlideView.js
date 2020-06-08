@@ -8,8 +8,8 @@ import SlideViewCategoriesDetail from '../components/SlideViewCategoriesDetail';
 
 /**
  * TAVOITE:
- * Näyttää kuvat kaikista kategorioista (halutussa muodossa), jotka annetaan sisälle.
- * Sisältää mahdollisuuden hyödyntää myös categorioista muitakin tietoja
+ * Näyttää kuvat kaikista kategorioista (halutussa muodossa), jotka annetaan sisälle. OK
+ * Sisältää mahdollisuuden hyödyntää myös categorioista muitakin tietoja OK
  * 
  * TODO:myöhemmin catregories vaan propsina sisälle, tai ehkä jopa suoraan vaan arrey jossa imaget?
 */
@@ -41,12 +41,11 @@ const CategoriesSlideView = () => {
                 sliderWidth={300}
                 itemWidth={250}
                 renderItem={({ item, index }) => {
-                    console.log('****')
-                    console.log(item.image_url)
+                    // console.log('****')
+                    // console.log(item.image_url)
                     return (
                         <>
                             <SlideViewCategoriesDetail category={item}></SlideViewCategoriesDetail>
-
                         </>
                     )
                 }}
