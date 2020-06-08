@@ -18,20 +18,29 @@ import SlideViewCategoriesDetail from '../components/SlideViewCategoriesDetail';
 */
 
 const CategoriesSlideView = () => {
-
+    const [carousel, setCarousel] = useState(null);
     const categories = useCategories();
-    const images = categories.map(image => image.image_url);
-    // console.log(images);
+    // console.log(carousel);
+
+    const changeLesson= () =>{
+        console.log(carousel.currentIndex)
+        //pävitetään lessonContext
+
+
+    }
+
 
     return (
         <SafeAreaView
             style={styles.container}>
             <Carousel
-                loop
+                ref= {(c) =>{setCarousel(c)}} //ajetaan ref johonkin stateen
+                onSnapToItem={()=>{changeLesson()}}
+                loop={true}
                 layout= 'default'
                 data={categories}
-                sliderWidth={300}
-                itemWidth={250}
+                sliderWidth={400}
+                itemWidth={270}
                 renderItem={({ item, index }) => {
                     // console.log('****')
                     // console.log(item.image_url)
@@ -53,7 +62,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
         marginTop: 10,
-        marginBottom: 40,
+        marginBottom: 10,
         alignItems: 'center',
         justifyContent: 'center',
     },
