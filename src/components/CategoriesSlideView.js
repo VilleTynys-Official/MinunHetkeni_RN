@@ -7,6 +7,7 @@ import { FlatList } from 'react-native-gesture-handler';
 import SlideViewCategoriesDetail from '../components/SlideViewCategoriesDetail';
 import {Context as CategoriesContext} from '../context/CategoriesContext';
 
+
 /**
  * TAVOITE:
  * Näyttää kuvat kaikista kategorioista (halutussa muodossa), jotka annetaan sisälle. OK
@@ -24,15 +25,21 @@ const CategoriesSlideView = () => {
     const [carousel, setCarousel] = useState(null);
     const categories = useCategories();
     const { state: {chosenCategory}, setChosenCategory} = useContext(CategoriesContext);
-
     // console.log(carousel);
     // console.log(chosenCategory)
 
-    const changeCategory= () =>{
-        console.log(carousel.currentIndex)
-        // //päivitetään CategorieContext
-        // console.log(categories[carousel.currentIndex])
 
+
+    //päivitetään CategoriesContext.
+    const changeCategory= () =>{
+        console.log('***')
+        console.log(carousel.currentIndex)
+        // console.log(categories[carousel.currentIndex].kategoria_id);
+        console.log(categories[carousel.currentIndex].kategoria_id);
+        setChosenCategory(categories[carousel.currentIndex].kategoria_id);
+
+        console.log(categories[carousel.currentIndex].nimi)
+        console.log(chosenCategory)
     }
 
 
@@ -40,9 +47,9 @@ const CategoriesSlideView = () => {
         <SafeAreaView
             style={styles.container}>
             <Carousel
-                ref= {(c) =>{setCarousel(c)}} //ajetaan ref johonkin stateen
+                ref= {(c) =>{setCarousel(c)}} //ajetaan ref  stateen
                 onSnapToItem={()=>{changeCategory()}}
-                loop={true}
+                // loop={true}
                 layout= 'default'
                 data={categories}
                 sliderWidth={400}
