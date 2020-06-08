@@ -5,7 +5,6 @@ import createDataContext from './createDataContext';
  * 
  * @param {*} state TODO: kirjoita tähän selite mitä stateja Context sisältää
  * @param {*} action TODO: kirjoita tähän selite mitä actioneja Context sisältää
- * @param {*} setChosenCategory 'dsfjdsalkf
  */
 
 
