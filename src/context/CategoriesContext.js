@@ -21,7 +21,8 @@ const categoriesReducer = (state, action) => {
 
 //actionit
 const setChosenCategory = dispatch =>(category) => {
-    // console.log(category)
+    console.log('provider arvo:')
+    console.log(category)
     dispatch ({ type: 'set_chosen_category', payload: category });
 };
 
@@ -29,5 +30,5 @@ const setChosenCategory = dispatch =>(category) => {
 export const { Provider, Context} = createDataContext(
     categoriesReducer,
     { setChosenCategory },
-    { chosenCategory:'default category'}
+    { chosenCategory:'0001'}
 );
