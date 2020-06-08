@@ -29,7 +29,7 @@ const LessonsScreenTab = (navigation) => {
     // console.log(categories.map(JSONkey => JSONkey.nimi ))
     const images = categories.filter(JSONkey => JSONkey.image_url)
 
-    console.log(chosenLesson)
+    // console.log(chosenLesson)
 
 
     return (
