@@ -6,15 +6,17 @@ import { Value } from 'react-native-reanimated';
  * Komponentti SlideViewn kategorioiden muotoiluun.
  * 
  * 
- * TODO: erillinen "info" -nappula joka aukaisee lisätiedot (jotta säästetään ruututilaa)?
+ * TODO:
+ * erillinen "info" -nappula joka aukaisee lisätiedot (jotta säästetään ruututilaa)?
+ * erillinen "lataa"- nappula jonka avulla kategorian harjoitukset voidaan ladata käytettäväksi offline tilassa.
  */
 
 const SlideViewCategoriesDetail = ({category}) =>{
-    console.log(category.image_url)
+    // console.log(category.image_url)
     // console.log('*****')
     return (
         <View style={styles.container}>
-            <View style={{flex:1}}>
+            <View style={styles.imageContainer}>
                 <Image source={{uri: category.image_url}}
                         style={styles.image} />
             </View>
@@ -34,20 +36,23 @@ const styles = StyleSheet.create({
     container:{
         margin: 0,
         flexDirection: 'column',
+        flex: 1,
+        alignItems: 'center'
+    },
+    imageContainer:{
         flex: 1
     },
     
     image:{
-        width: 250,
-        height: 100,
+        width: 260,
         borderRadius: 20,
-        flexGrow: 1, ///venyttää imagen koko flexiin.
+        flexGrow: 1, ///venyttää imagen ottamaan kaiken vapaan tilan
     },
 
     textContainer:{
         marginTop: 10,
-        flex: 1,
-        alignItems: 'center' 
+        alignItems: 'center' ,
+        flex: 1
     },
 
     heading:{
