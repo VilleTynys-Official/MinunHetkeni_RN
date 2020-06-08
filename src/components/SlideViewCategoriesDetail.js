@@ -4,6 +4,9 @@ import { Value } from 'react-native-reanimated';
 
 /**
  * Komponentti SlideViewn kategorioiden muotoiluun.
+ * 
+ * 
+ * TODO: erillinen "info" -nappula joka aukaisee lisätiedot (jotta säästetään ruututilaa)?
  */
 
 const SlideViewCategoriesDetail = ({category}) =>{
@@ -44,11 +47,7 @@ const styles = StyleSheet.create({
     textContainer:{
         marginTop: 10,
         flex: 1,
-        alignItems: 'center'
-        // justifyContent: 'center',
-        
-        
-
+        alignItems: 'center' 
     },
 
     heading:{
