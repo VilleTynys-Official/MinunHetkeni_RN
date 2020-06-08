@@ -1,10 +1,11 @@
 import Carousel from 'react-native-snap-carousel';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { View, Image, Text, StyleSheet, ScrollView, useWindowDimensions } from 'react-native';
 import useCategories from '../hooks/useCategories';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { FlatList } from 'react-native-gesture-handler';
 import SlideViewCategoriesDetail from '../components/SlideViewCategoriesDetail';
+import {Context as CategoriesContext} from '../context/CategoriesContext';
 
 /**
  * TAVOITE:
@@ -13,19 +14,24 @@ import SlideViewCategoriesDetail from '../components/SlideViewCategoriesDetail';
  * 
  * TODO:
  * 1 styling kuntoon
- * 2 
+ * 2 CategoriesContextin päivitys
+ * 3 LessonsList kun CategoriesContext päivittyy.
+ * 4 Aloitus CategoriesContextin avulla.
  * myöhemmin catregories vaan propsina sisälle, tai ehkä jopa suoraan vaan arrey jossa imaget?
 */
 
 const CategoriesSlideView = () => {
     const [carousel, setCarousel] = useState(null);
     const categories = useCategories();
+    const { state: {chosenCategory}, setChosenCategory} = useContext(CategoriesContext);
+
     // console.log(carousel);
+    // console.log(chosenCategory)
 
-    const changeLesson= () =>{
+    const changeCategory= () =>{
         console.log(carousel.currentIndex)
-        //pävitetään lessonContext
-
+        // //päivitetään CategorieContext
+        // console.log(categories[carousel.currentIndex])
 
     }
 
@@ -35,7 +41,7 @@ const CategoriesSlideView = () => {
             style={styles.container}>
             <Carousel
                 ref= {(c) =>{setCarousel(c)}} //ajetaan ref johonkin stateen
-                onSnapToItem={()=>{changeLesson()}}
+                onSnapToItem={()=>{changeCategory()}}
                 loop={true}
                 layout= 'default'
                 data={categories}
@@ -54,7 +60,6 @@ const CategoriesSlideView = () => {
         </SafeAreaView>
     )
 };
-
 
 
 const styles = StyleSheet.create({

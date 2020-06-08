@@ -7,7 +7,7 @@ import LessonsScreenTab from './src/screens/LessonsScreenTab';
 import MediaScreen from './src/screens/MediaScreen';
 import SplashScreen from './src/screens/SplashScreen';
 import DownloadsScreen from './src/screens/DownloadsScreen';
-import {Provider as LessonsContext} from './src/context/LessonsContext';
+import {Provider as CategoriesContext} from './src/context/CategoriesContext';
 
 
 import * as React from 'react';
@@ -47,7 +47,7 @@ const Tab = createMaterialBottomTabNavigator();
 
 export default App= ()=> {
   return (
-    <LessonsContext>
+    <CategoriesContext>
       <NavigationContainer theme={MyTheme}>
           <Tab.Navigator
             activeColor="rgb(252, 186, 186)"
@@ -108,6 +108,6 @@ export default App= ()=> {
           </Tab.Screen>
         </Tab.Navigator>
       </NavigationContainer>
-    </LessonsContext>
+    </CategoriesContext>
   );
 }

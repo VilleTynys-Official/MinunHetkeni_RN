@@ -4,9 +4,11 @@ import CategoriesDetail from './CategoriesDetail';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native'
 //komponentti "pidetty tyhmänä" >>> Näyttää kaikki kategoriat jotka annetaan sisälle.
+//TODO: Päivitä Context kun kategoriaa painetaa.
 
 const CategoriesList = ({title, categories, navigation, isHorizontal}) => {
     navigation = useNavigation();
+    
 
     return (
         <View style={styles.container}>
@@ -20,6 +22,9 @@ const CategoriesList = ({title, categories, navigation, isHorizontal}) => {
                     return (
                     <TouchableOpacity onPress={()=> {
                         console.log('esim täs kohtaa voi päivittää lessons staten provideriin (luento sivu saa tiedon mistä aloittaa carousel..)');
+                        
+                        
+                        
                         // nyt tieto viedään propseina, mut provider vois toimia paremmin:
                             navigation.navigate('Lessons', {kategoria_id: item.kategoria_id, lessons: item.lessons})}}>
                         <CategoriesDetail category={item} />

@@ -6,7 +6,7 @@ import { FlatList } from 'react-native-gesture-handler';
 import LessonsList from '../components/LessonsList';
 import useNavigation from '@react-navigation/native';
 import CategoriesCarousel from '../components/CategoriesCarousel';
-import { Context as LessonsContext} from '../context/LessonsContext';
+import { Context as CategoriesContext} from '../context/CategoriesContext';
 
 
 
@@ -21,7 +21,7 @@ import { Context as LessonsContext} from '../context/LessonsContext';
 const LessonsScreenTab = (navigation) => {
     // const [category, setCategory] = useState(null);
     const categories = useCategories();
-    const { state: {chosenLesson}, setChosenLesson} = useContext(LessonsContext);
+    const { state: {chosenCategory}, setChosenCategory} = useContext(CategoriesContext);
 
     //TODO: Opettele tämä hyvin!!!!!
     // ES6 MÄPPÄÄMINEN: uusi array, jossa on kaikki funktion perusteella mäpätyt jäsenet.
@@ -29,15 +29,14 @@ const LessonsScreenTab = (navigation) => {
     // console.log(categories.map(JSONkey => JSONkey.nimi ))
     const images = categories.filter(JSONkey => JSONkey.image_url)
 
-    // console.log(chosenLesson)
+    console.log(chosenCategory)
 
 
     return (
             <>
-                <Text>{chosenLesson}</Text>
+                <Text>{chosenCategory}</Text>
                 <Button title='vaihda lesson'
-                        onPress={()=>setChosenLesson('lkj')}></Button>
-               
+                        onPress={()=>setChosenCategory('lkj')}></Button>
             </>
     );
 };
