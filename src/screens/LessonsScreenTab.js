@@ -28,7 +28,7 @@ const LessonsScreenTab = (navigation) => {
     // eli siis näin voidaan filtteröidä JSON datasta "key" arvoja hyödyntämällä.
     // console.log(categories.map(JSONkey => JSONkey.nimi ))
     const images = categories.filter(JSONkey => JSONkey.image_url)
-
+    console.log('LessonsScreenTab')
     console.log(chosenCategory)
 
 

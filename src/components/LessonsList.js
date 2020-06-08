@@ -13,7 +13,7 @@ import CategoriesCarousel from './CategoriesCarousel';
 
 const LessonsList = ({lessons}) => {
     const categories= useCategories()
-    // console.log(lesson)
+    console.log(lessons)
     return (
         <View style={styles.container}>
             <FlatList

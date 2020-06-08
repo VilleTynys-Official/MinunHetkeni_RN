@@ -25,7 +25,7 @@ const CategoriesList = ({title, categories, navigation, isHorizontal}) => {
                     <TouchableOpacity onPress={()=> {
                         // console.log(item.kategoria_id)
                         setChosenCategory(item.kategoria_id)
-                        // nyt tieto viedään propseina, mut provider vois toimia paremmin:
+                        // TODO: muokkaa navigointi kuntoon jossain välissä. 
                             navigation.navigate('Lessons', {kategoria_id: item.kategoria_id, lessons: item.lessons})}}>
                         <CategoriesDetail category={item} />
                     </TouchableOpacity>
