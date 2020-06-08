@@ -21,8 +21,8 @@ const categoriesReducer = (state, action) => {
 
 //actionit
 const setChosenCategory = dispatch =>(category) => {
-    console.log('provider arvo:')
-    console.log(category)
+    // console.log('provider arvo:')
+    // console.log(category)
     dispatch ({ type: 'set_chosen_category', payload: category });
 };
 
