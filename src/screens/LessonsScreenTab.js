@@ -1,48 +1,50 @@
-import React, {useState, useContext} from 'react';
-import {View, Button, Text, StyleSheet, ScrollView} from 'react-native';
-import useCategories from '../hooks/useCategories';
-import CategoriesList from '../components/CategoriesList';
-import { FlatList } from 'react-native-gesture-handler';
+import React, { useContext } from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import CategoriesSlideView from '../components/CategoriesSlideView';
 import LessonsList from '../components/LessonsList';
-import useNavigation from '@react-navigation/native';
-import CategoriesCarousel from '../components/CategoriesCarousel';
-import { Context as CategoriesContext} from '../context/CategoriesContext';
-
+import { Context as CategoriesContext } from '../context/CategoriesContext';
+import useCategories from '../hooks/useCategories';
 
 
 /**TODO
- * 1 haetaan KAIKKIEN kategorioiden tiedot useCategories avulla. OK!
- * 2 Näytetään KAIKKI carousel viewssä (esim.  pelkät kategorian nimet tai kuvat)
- * 3 Päivitetään lessonit alle sen mukaisesti mikä kategoria on näkyvillä karusellissa.
- * 4 Yhdistetään main pagen navigointiin (et sieltä valinta tuo tänne.)
+ * 1 haetaan KAIKKIEN kategorioiden tiedot useCategories avulla. OK
+ * 2 Näytetään KAIKKI carousel viewssä (esim.  pelkät kategorian nimet tai kuvat) OK
+ *  
+ * 
+ * 3 Päivitetään lessonit alle sen mukaisesti mikä kategoria on näkyvillä karusellissa. >>>NEXT
+ *      eli ns. yksi totuus mikä category on valittu.
+ * 
+ * 4 Yhdistetään main pagen navigointiin (et sieltä valinta tuo tänne.) OK
  * 
  */
 
 const LessonsScreenTab = (navigation) => {
-    // const [category, setCategory] = useState(null);
-    const categories = useCategories();
-    const { state: {chosenCategory}, setChosenCategory} = useContext(CategoriesContext);
+    const chosenCategory = useContext(CategoriesContext);
+    const categories = useCategories()
 
-    //TODO: Opettele tämä hyvin!!!!!
-    // ES6 MÄPPÄÄMINEN: uusi array, jossa on kaikki funktion perusteella mäpätyt jäsenet.
-    // eli siis näin voidaan filtteröidä JSON datasta "key" arvoja hyödyntämällä.
-    // console.log(categories.map(JSONkey => JSONkey.nimi ))
-    const images = categories.filter(JSONkey => JSONkey.image_url)
-    console.log('LessonsScreenTab')
-    console.log(chosenCategory)
+    //LESSONS PITÄÄ OLLA MUOTOA:
+    // Object {
+    //     "kesto": "10 minuuttia, 13 sekuntia",
+    //     "nimi": "Istunto 4",
+    // },
+    // Object {
+    //     "kesto": "10 minuuttia, 13 sekuntia",
+    //     "nimi": "Istunto 4",
+    // },
 
-
+    //TODO: Tähän lista joka näyttää chosenCategoryyn kuuluvat lessonit.
     return (
-            <>
-                <Text>{chosenCategory}</Text>
-                <Button title='vaihda lesson'
-                        onPress={()=>setChosenCategory('lkj')}></Button>
-            </>
-    );
+        <  View style={styles.container}>
+            <CategoriesSlideView></CategoriesSlideView>
+        </View>
+    )
 };
 
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1
+    }
 });
 
 export default LessonsScreenTab;
