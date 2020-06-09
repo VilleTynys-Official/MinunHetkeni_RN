@@ -4,8 +4,9 @@ import CategoriesDetail from './CategoriesDetail';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native'
 import { Context as CategoriesContext} from '../context/CategoriesContext';
+
+
 //komponentti "pidetty tyhmänä" >>> Näyttää kaikki kategoriat jotka annetaan sisälle.
-//TODO: Päivitä Context kun kategoriaa painetaa.
 
 const CategoriesList = ({title, categories, navigation, isHorizontal}) => {
     navigation = useNavigation();
@@ -25,8 +26,8 @@ const CategoriesList = ({title, categories, navigation, isHorizontal}) => {
                     <TouchableOpacity onPress={()=> {
                         // console.log(item.kategoria_id)
                         setChosenCategory(item.kategoria_id)
-                        // TODO: muokkaa navigointi kuntoon jossain välissä. 
-                            navigation.navigate('Lessons', {kategoria_id: item.kategoria_id, lessons: item.lessons})}}>
+                        // TODO: navigointi onnistuu, mut mites propsit ja onko tää kuinka raskas menetelmä mennä suoraan?
+                            navigation.navigate('LessonsTab', {kategoria_id: item.kategoria_id, lessons: item.lessons})}}>
                         <CategoriesDetail category={item} />
                     </TouchableOpacity>
                     )
