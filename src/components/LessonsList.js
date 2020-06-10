@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, FlatList, TouchableOpacity} from 'react-native';
+import { View, Text, StyleSheet, Image, FlatList, TouchableOpacity } from 'react-native';
 import CategoriesDetail from './CategoriesDetail';
 import { ScrollView } from 'react-native-gesture-handler';
 import LessonsDetail from './LessonsDetail';
@@ -15,8 +15,8 @@ import CategoriesSlideView from './CategoriesSlideView';
  */
 
 
-const LessonsList = ({lessons}) => {
-    const categories= useCategories()
+const LessonsList = ({ lessons }) => {
+    const categories = useCategories()
     // console.log(lessons)
     return (
         <View style={styles.container}>
@@ -30,15 +30,15 @@ const LessonsList = ({lessons}) => {
                 //                                     <CategoriesSlideView/>
                 //                                 )
                 //                         }}
-                ListHeaderComponentStyle= {{height: 300}}
+                ListHeaderComponentStyle={{ height: 300 }}
 
                 data={lessons}
-                keyExtractor={ (lesson) => lesson.nimi}
-                renderItem = {( {item }) => {
+                keyExtractor={(lesson) => lesson.nimi}
+                renderItem={({ item }) => {
                     return (
-                            <LessonsDetail lesson ={item}></LessonsDetail>
+                        <LessonsDetail lesson={item}></LessonsDetail>
                     )
-                }}    
+                }}
             />
         </View>
     )
@@ -47,7 +47,7 @@ const LessonsList = ({lessons}) => {
 
 const styles = StyleSheet.create({
     container: {
-        margin:10,
+        margin: 10,
     }
 
 });
