@@ -49,7 +49,7 @@ const CategoriesSlideView = () => {
             <Carousel
                 ref= {(c) =>{setCarousel(c)}} //ajetaan ref  stateen
                 onSnapToItem={()=>{changeCategory()}}
-                // loop={true}
+                loop={true}
                 layout= 'default'
                 data={categories}
                 sliderWidth={400}
@@ -72,9 +72,9 @@ const CategoriesSlideView = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
-        marginTop: 10,
-        marginBottom: 10,
+        backgroundColor: 'rgb(220, 220, 242)',
+        marginTop: 0,
+        marginBottom: 0,
         alignItems: 'center',
         justifyContent: 'center',
     },

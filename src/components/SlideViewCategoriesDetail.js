@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Image, Text, StyleSheet } from 'react-native';
+import {View, Image, Text, StyleSheet, ImageBackground } from 'react-native';
 import { Value } from 'react-native-reanimated';
 
 /**
@@ -11,30 +11,40 @@ import { Value } from 'react-native-reanimated';
  * erillinen "lataa"- nappula jonka avulla kategorian harjoitukset voidaan ladata käytettäväksi offline tilassa.
  */
 
-const SlideViewCategoriesDetail = ({category}) =>{
-    // console.log(category.image_url)
+const SlideViewCategoriesDetail = ({category: {image_url, nimi, kestoPäivissä}}) =>{
+    // console.log(image_url)
     // console.log('*****')
+
+
+    //
     return (
         <View style={styles.container}>
             <View style={styles.imageContainer}>
-                <Image source={{uri: category.image_url}}
-                        style={styles.image} />
+                <ImageBackground
+                        source={{uri: image_url}}
+                        style={styles.image}
+                        imageStyle={{ borderRadius: 20}}>
+                    <Text style={styles.heading}>{nimi}</Text>
+                </ImageBackground>
             </View>
-            <View style={styles.textContainer}>
-                <Text style={styles.heading}>{category.nimi}</Text>
-                <Text style={styles.kestoText}>Kurssin kesto: {category.kestoPäivissä} päivää</Text>
-                <Text style={styles.infoText}>{category.kuvaus}</Text>
-            </View>
+            
+
+
         </View>
     )
 };
 
+//VANHAT ELEMENTIT:
+// <View style={styles.textContainer}>
+// <Text style={styles.heading}>{category.nimi}</Text>
+// <Text style={styles.kestoText}>Kurssin kesto: {category.kestoPäivissä} päivää</Text>
+// <Text style={styles.infoText}>{category.kuvaus}</Text>
+// </View>
 
 
-// justifyContent, Flexbox
 const styles = StyleSheet.create({
     container:{
-        margin: 0,
+        marginBottom: 10,
         flexDirection: 'column',
         flex: 1,
         alignItems: 'center'
@@ -45,7 +55,6 @@ const styles = StyleSheet.create({
     
     image:{
         width: 260,
-        borderRadius: 20,
         flexGrow: 1, ///venyttää imagen ottamaan kaiken vapaan tilan
     },
 
@@ -56,9 +65,16 @@ const styles = StyleSheet.create({
     },
 
     heading:{
-        fontSize:20,
-        // textAlign: 'left',
-        fontWeight: "bold"
+        fontSize:25,
+        textAlignVertical: 'bottom',
+        fontWeight: "bold",
+        color: 'white',
+        margin: 10,
+        alignSelf: 'flex-start',
+        justifyContent: 'flex-end',
+        flex: 1
+
+        
     },
 
     infoText:{
