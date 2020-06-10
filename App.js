@@ -27,8 +27,8 @@ import LogoTitle from './src/components/LogoTitle';
  * 
  * 
  * TODO:
- * 1 Kaikki samaan tabNavigatoriin.
- * 2 Setup navigointi harjoitukset tabiin ja testaa et kaikki toimii. 
+ * 1 Kaikki samaan tabNavigatoriin. OK
+ * 2 Setup navigointi harjoitukset tabiin ja testaa et kaikki toimii. OK
  * 
  * 
  * 
@@ -87,7 +87,7 @@ const SettingsStackScreen = () => {
 
 
 
-// const LessonsStack = createStackNavigator();
+
 const Tab = createMaterialBottomTabNavigator();
 
 export default App = () => {
