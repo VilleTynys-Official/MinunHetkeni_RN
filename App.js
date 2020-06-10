@@ -45,6 +45,11 @@ const MainStack = createStackNavigator();
 // const LessonsStack = createStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
 
+
+ 
+
+
+
 export default App= ()=> {
   return (
     <CategoriesContext>

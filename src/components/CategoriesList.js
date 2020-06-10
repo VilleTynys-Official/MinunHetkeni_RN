@@ -27,7 +27,7 @@ const CategoriesList = ({title, categories, navigation, isHorizontal}) => {
                         // console.log(item.kategoria_id)
                         setChosenCategory(item.kategoria_id)
                         // TODO: navigointi onnistuu, mut mites propsit ja onko tää kuinka raskas menetelmä mennä suoraan?
-                            navigation.navigate('LessonsTab', {kategoria_id: item.kategoria_id, lessons: item.lessons})}}>
+                            navigation.navigate('Lessons', {kategoria_id: item.kategoria_id, lessons: item.lessons})}}>
                         <CategoriesDetail category={item} />
                     </TouchableOpacity>
                     )
