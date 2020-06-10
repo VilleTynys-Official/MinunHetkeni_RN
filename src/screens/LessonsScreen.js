@@ -18,6 +18,7 @@ import CategoriesCarousel from '../components/CategoriesCarousel';
 
 const LessonsScreen = ({route, navigation}) => {
     const {lessons} =route.params;
+    console.log(lessons)
 
     return (
             <View>

@@ -7,8 +7,8 @@ import {View, Button, Text, StyleSheet, ScrollView} from 'react-native';
  * Näyttää kuvat kaikista kategorioista (halutussa muodossa), jotka annetaan sisälle.
  * Sisältää mahdollisuuden hyödyntää myös categorioista muitakin tietoja
  * TODO
- * 1. Otetaan kaikki kategoriat kuvineen käyttöön.
- * 2. Detailssit kuntoon
+ * 1. Otetaan kaikki kategoriat kuvineen käyttöön. OK
+ * 2. Detailssit ok kuntoon
  * 3. lessonContextin muuttaminen kun käyttäjä swipee kategorioita. (ehkä johonkin muualle?)
  * 
  * .

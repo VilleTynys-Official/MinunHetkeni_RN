@@ -1,52 +1,65 @@
 import Carousel from 'react-native-snap-carousel';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { View, Image, Text, StyleSheet, ScrollView, useWindowDimensions } from 'react-native';
 import useCategories from '../hooks/useCategories';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { FlatList } from 'react-native-gesture-handler';
 import SlideViewCategoriesDetail from '../components/SlideViewCategoriesDetail';
+import {Context as CategoriesContext} from '../context/CategoriesContext';
+
 
 /**
  * TAVOITE:
- * Näyttää kuvat kaikista kategorioista (halutussa muodossa), jotka annetaan sisälle.
- * Sisältää mahdollisuuden hyödyntää myös categorioista muitakin tietoja
+ * Näyttää kuvat kaikista kategorioista (halutussa muodossa), jotka annetaan sisälle. OK
+ * Sisältää mahdollisuuden hyödyntää myös categorioista muitakin tietoja OK
  * 
- * TODO:myöhemmin catregories vaan propsina sisälle, tai ehkä jopa suoraan vaan arrey jossa imaget?
+ * TODO:
+ * 1 styling kuntoon
+ * 2 CategoriesContextin päivitys
+ * 3 LessonsList kun CategoriesContext päivittyy.
+ * 4 Aloitus CategoriesContextin avulla.
+ * myöhemmin catregories vaan propsina sisälle, tai ehkä jopa suoraan vaan arrey jossa imaget?
 */
 
 const CategoriesSlideView = () => {
-
+    const [carousel, setCarousel] = useState(null);
     const categories = useCategories();
-    const images = categories.map(image => image.image_url);
-    // console.log(images);
+    const { state: {chosenCategory}, setChosenCategory} = useContext(CategoriesContext);
+    // console.log(carousel);
+    // console.log(chosenCategory)
 
 
 
-    const _renderItem = ({ item }) => {
-        console.log(item)
-        return (
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                <Text style={{ color: '#fff' }} >{item.nimi}</Text>
-            </View>
-        )
+    //päivitetään CategoriesContext.
+    const changeCategory= () =>{
+        console.log('***')
+        console.log(carousel.currentIndex)
+        // console.log(categories[carousel.currentIndex].kategoria_id);
+        console.log(categories[carousel.currentIndex].kategoria_id);
+        setChosenCategory(categories[carousel.currentIndex].kategoria_id);
+
+        console.log(categories[carousel.currentIndex].nimi)
+        console.log(chosenCategory)
     }
+
 
     return (
         <SafeAreaView
             style={styles.container}>
             <Carousel
-                loop
+                ref= {(c) =>{setCarousel(c)}} //ajetaan ref  stateen
+                onSnapToItem={()=>{changeCategory()}}
+                // loop={true}
                 layout= 'default'
                 data={categories}
-                sliderWidth={300}
-                itemWidth={250}
+                sliderWidth={400}
+                itemWidth={270}
                 renderItem={({ item, index }) => {
-                    console.log('****')
-                    console.log(item.image_url)
+                    // console.log('****')
+                    // console.log(item.image_url)
                     return (
                         <>
                             <SlideViewCategoriesDetail category={item}></SlideViewCategoriesDetail>
-
                         </>
                     )
                 }}
@@ -56,13 +69,12 @@ const CategoriesSlideView = () => {
 };
 
 
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
         marginTop: 10,
-        marginBottom: 40,
+        marginBottom: 10,
         alignItems: 'center',
         justifyContent: 'center',
     },

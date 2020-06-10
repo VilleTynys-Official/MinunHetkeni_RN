@@ -10,24 +10,25 @@ import createDataContext from './createDataContext';
 
 
 //Reducer
-const lessonsReducer = (state, action) => {
+const categoriesReducer = (state, action) => {
     switch (action.type) {
-        case 'set_chosen_lesson':
-            return {...state, chosenLesson: action.payload };
+        case 'set_chosen_category':
+            return {...state, chosenCategory: action.payload };
         default:
             return state;
     };
 };
 
 //actionit
-const setChosenLesson = dispatch =>(lesson) => {
-    // console.log(lesson)
-    dispatch ({ type: 'set_chosen_lesson', payload: lesson });
+const setChosenCategory = dispatch =>(category) => {
+    // console.log('provider arvo:')
+    // console.log(category)
+    dispatch ({ type: 'set_chosen_category', payload: category });
 };
 
 //hyödynnetään createDataContext komponenttia ja luodaan Contexti.
 export const { Provider, Context} = createDataContext(
-    lessonsReducer,
-    { setChosenLesson },
-    { chosenLesson:'default lesson'}
+    categoriesReducer,
+    { setChosenCategory },
+    { chosenCategory:'0001'}
 );

@@ -3,6 +3,7 @@ import {View, Text, StyleSheet } from 'react-native';
 
 /**
  * Komponentti lessoneiden muotoiluun.
+ * @param lesson Objekti, joka sisältää propsit: nimi ja kesto.
  */
 
 const LessonsDetail = ({lesson}) =>{

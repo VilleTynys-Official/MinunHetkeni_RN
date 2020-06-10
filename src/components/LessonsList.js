@@ -6,24 +6,28 @@ import LessonsDetail from './LessonsDetail';
 import CategoriesList from './CategoriesList';
 import useCategories from '../hooks/useCategories';
 import CategoriesCarousel from './CategoriesCarousel';
+import CategoriesSlideView from './CategoriesSlideView';
 
 
-//komponentti "pidetty tyhmänä" >>> Näyttää kaikki lessonit jotka annetaan sisälle.
+/**
+ * 
+ * @param {*} lessons [] joka sisältää tiedot lessoneista, jotka halutaan esittää.
+ */
 
 
 const LessonsList = ({lessons}) => {
     const categories= useCategories()
-    // console.log(lesson)
+    // console.log(lessons)
     return (
         <View style={styles.container}>
             <FlatList
                 // //CAROUSELLIN TESTAILUA ListHeaderComponenttia hyödyntämällä.
                 // //Toimii periaatteessa, mutta jotenkin täytyisi silti luoda "sivunvaihto".
                 // //Kokeillaan karusellia omana erillisena komponenttina (joka otetaan ehkä sit täs käyttöön)
-                //
+                // //
                 // ListHeaderComponent={()=>{
                 //                             return(
-                //                                     <CategoriesCarousel categories={categories}/>
+                //                                     <CategoriesSlideView/>
                 //                                 )
                 //                         }}
                 ListHeaderComponentStyle= {{height: 300}}
