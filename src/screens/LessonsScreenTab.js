@@ -4,6 +4,7 @@ import CategoriesSlideView from '../components/CategoriesSlideView';
 import LessonsList from '../components/LessonsList';
 import { Context as CategoriesContext } from '../context/CategoriesContext';
 import useCategories from '../hooks/useCategories';
+import { ScrollView } from 'react-native-gesture-handler';
 
 
 /**TODO
@@ -19,7 +20,7 @@ import useCategories from '../hooks/useCategories';
  */
 
 const LessonsScreenTab = (navigation) => {
-    const chosenCategory = useContext(CategoriesContext);
+    const {state: {chosenCategory}} = useContext(CategoriesContext);
     const categories = useCategories()
 
     //LESSONS PITÄÄ OLLA MUOTOA:
@@ -32,10 +33,19 @@ const LessonsScreenTab = (navigation) => {
     //     "nimi": "Istunto 4",
     // },
 
-    //TODO: Tähän lista joka näyttää chosenCategoryyn kuuluvat lessonit.
+
+    //TODO: Tähän funktio joka palauttaa lessons[] jossa on chosenCategoryyn kuuluvat lessonit.
+    // console.log('lessonit:', categories.filter(category => category.kategoria_id== '0001'))
+    const [lessons]  = categories.filter(category => category.kategoria_id== chosenCategory).map(x => x.lessons)
+    console.log('***', lessons)
+
+
     return (
-        <  View style={styles.container}>
-            <CategoriesSlideView></CategoriesSlideView>
+        <View style={styles.container}>
+            <CategoriesSlideView style={ {flex:1}}/>
+            <ScrollView  style={{ flex: 1}}>
+                <LessonsList lessons={lessons} />
+            </ScrollView>
         </View>
     )
 };
@@ -44,7 +54,9 @@ const LessonsScreenTab = (navigation) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1
-    }
+    },
+
+
 });
 
 export default LessonsScreenTab;
