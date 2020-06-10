@@ -21,8 +21,7 @@ const LessonsList = ({ lessons }) => {
     return (
         <View style={styles.container}>
             <FlatList
-                // //CAROUSELLIN TESTAILUA ListHeaderComponenttia hyödyntämällä.
-                // //Toimii periaatteessa, mutta jotenkin täytyisi silti luoda "sivunvaihto".
+                // //CAROUSELLIN TESTAILUA
                 // //Kokeillaan karusellia omana erillisena komponenttina (joka otetaan ehkä sit täs käyttöön)
                 // //
                 // ListHeaderComponent={()=>{
@@ -31,12 +30,22 @@ const LessonsList = ({ lessons }) => {
                 //                                 )
                 //                         }}
                 ListHeaderComponentStyle={{ height: 300 }}
-
                 data={lessons}
                 keyExtractor={(lesson) => lesson.nimi}
                 renderItem={({ item }) => {
                     return (
-                        <LessonsDetail lesson={item}></LessonsDetail>
+
+                        <TouchableOpacity
+                            onPress={() => {
+                                console.log('lessonsList ja item on : ', item)
+                                // navigation.navigate('LessonsTab', { kategoria_id: item.kategoria_id, lessons: item.lessons })
+                            }}>
+                            <LessonsDetail lesson={item}></LessonsDetail>
+                        </TouchableOpacity>
+
+
+
+
                     )
                 }}
             />
