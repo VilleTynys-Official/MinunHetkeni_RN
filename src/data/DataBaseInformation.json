@@ -12,42 +12,51 @@
             [
                 {
                     "nimi": "Istunto 1",
-                    "kesto": "10 minuuttia, 13 sekuntia"
+                    "kesto": "10 minuuttia, 13 sekuntia",
+                    "audio_url": "https://ia802804.us.archive.org/6/items/spc183_1809_librivox/spc183_allthings_cc_128kb.mp3" 
                 },
 
                 {
                     "nimi": "Istunto 2",
-                    "kesto": "11 minuuttia, 13 sekuntia"
+                    "kesto": "11 minuuttia, 13 sekuntia",
+                    "audio_url": "https://ia802804.us.archive.org/6/items/spc183_1809_librivox/spc183_allthings_cc_128kb.mp3" 
                 },
                 {
                     "nimi": "Istunto 3",
-                    "kesto": "11 minuuttia, 13 sekuntia"
+                    "kesto": "11 minuuttia, 13 sekuntia",
+                    "audio_url": "https://ia802804.us.archive.org/6/items/spc183_1809_librivox/spc183_allthings_cc_128kb.mp3" 
                 },
                 {
                     "nimi": "Istunto 4",
-                    "kesto": "10 minuuttia, 13 sekuntia"
+                    "kesto": "10 minuuttia, 13 sekuntia",
+                    "audio_url": "https://ia802804.us.archive.org/6/items/spc183_1809_librivox/spc183_allthings_cc_128kb.mp3" 
                 },
 
                 {
                     "nimi": "Istunto 5",
-                    "kesto": "11 minuuttia, 13 sekuntia"
+                    "kesto": "11 minuuttia, 13 sekuntia",
+                    "audio_url": "https://ia802804.us.archive.org/6/items/spc183_1809_librivox/spc183_allthings_cc_128kb.mp3" 
                 },
                 {
                     "nimi": "Istunto 6",
-                    "kesto": "11 minuuttia, 13 sekuntia"
+                    "kesto": "11 minuuttia, 13 sekuntia",
+                    "audio_url": "https://ia802804.us.archive.org/6/items/spc183_1809_librivox/spc183_allthings_cc_128kb.mp3" 
                 },
                 {
                     "nimi": "Istunto 7",
-                    "kesto": "10 minuuttia, 13 sekuntia"
+                    "kesto": "10 minuuttia, 13 sekuntia",
+                    "audio_url": "https://ia802804.us.archive.org/6/items/spc183_1809_librivox/spc183_allthings_cc_128kb.mp3" 
                 },
 
                 {
                     "nimi": "Istunto 8",
-                    "kesto": "11 minuuttia, 13 sekuntia"
+                    "kesto": "11 minuuttia, 13 sekuntia",
+                    "audio_url": "https://ia802804.us.archive.org/6/items/spc183_1809_librivox/spc183_allthings_cc_128kb.mp3" 
                 },
                 {
                     "nimi": "Istunto 9",
-                    "kesto": "11 minuuttia, 13 sekuntia"
+                    "kesto": "11 minuuttia, 13 sekuntia",
+                    "audio_url": "https://ia802804.us.archive.org/6/items/spc183_1809_librivox/spc183_allthings_cc_128kb.mp3" 
                 }
 
             ]
@@ -64,12 +73,14 @@
             [
                 {
                     "nimi": "Istunto 1",
-                    "kesto": "10 minuuttia, 13 sekuntia"
+                    "kesto": "10 minuuttia, 13 sekuntia",
+                    "audio_url": "https://ia802804.us.archive.org/6/items/spc183_1809_librivox/spc183_allthings_cc_128kb.mp3" 
                 },
 
                 {
                     "nimi": "Istunto 2",
-                    "kesto": "11 minuuttia, 13 sekuntia"
+                    "kesto": "11 minuuttia, 13 sekuntia",
+                    "audio_url": "https://ia802804.us.archive.org/6/items/spc183_1809_librivox/spc183_allthings_cc_128kb.mp3" 
                 }
 
             ]
