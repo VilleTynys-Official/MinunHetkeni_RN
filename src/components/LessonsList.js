@@ -1,12 +1,8 @@
-import React from 'react';
-import { View, Text, StyleSheet, Image, FlatList, TouchableOpacity } from 'react-native';
-import CategoriesDetail from './CategoriesDetail';
-import { ScrollView } from 'react-native-gesture-handler';
+import React, {useContext} from 'react';
+import { View, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import LessonsDetail from './LessonsDetail';
-import CategoriesList from './CategoriesList';
-import useCategories from '../hooks/useCategories';
-import CategoriesCarousel from './CategoriesCarousel';
-import CategoriesSlideView from './CategoriesSlideView';
+import { useNavigation } from '@react-navigation/native';
+import {Context as CategoriesContext} from '../context/CategoriesContext'
 
 
 /**
@@ -16,8 +12,11 @@ import CategoriesSlideView from './CategoriesSlideView';
 
 
 const LessonsList = ({ lessons }) => {
-    const categories = useCategories()
-    // console.log(lessons)
+    const {state: {chosenLesson}, setChosenLesson} = useContext(CategoriesContext)
+    const navigation = useNavigation();
+    // console.log(setChosenLesson)
+
+
     return (
         <View style={styles.container}>
             <FlatList
@@ -28,8 +27,9 @@ const LessonsList = ({ lessons }) => {
 
                         <TouchableOpacity
                             onPress={() => {
-                                console.log('lessonsList ja item on : ', item)
-                                // navigation.navigate('LessonsTab', { kategoria_id: item.kategoria_id, lessons: item.lessons })
+                                // console.log('Lessoniksi valittu: ', item, 'päivitetään se Contextiin.')
+                                setChosenLesson(item)
+                                navigation.navigate('MediaScreen')
                             }}>
                             <LessonsDetail lesson={item}></LessonsDetail>
                         </TouchableOpacity>
