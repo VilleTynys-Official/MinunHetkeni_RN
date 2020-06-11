@@ -32,14 +32,11 @@ const CategoriesSlideView = () => {
 
     //päivitetään CategoriesContext.
     const changeCategory= () =>{
-        console.log('***')
-        console.log(carousel.currentIndex)
+        // console.log('***')
+        // console.log(carousel.currentIndex)
+        // // console.log(categories[carousel.currentIndex].kategoria_id);
         // console.log(categories[carousel.currentIndex].kategoria_id);
-        console.log(categories[carousel.currentIndex].kategoria_id);
         setChosenCategory(categories[carousel.currentIndex].kategoria_id);
-
-        console.log(categories[carousel.currentIndex].nimi)
-        console.log(chosenCategory)
     }
 
 
