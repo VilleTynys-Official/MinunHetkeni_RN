@@ -21,15 +21,6 @@ const LessonsList = ({ lessons }) => {
     return (
         <View style={styles.container}>
             <FlatList
-                // //CAROUSELLIN TESTAILUA
-                // //Kokeillaan karusellia omana erillisena komponenttina (joka otetaan ehkä sit täs käyttöön)
-                // //
-                // ListHeaderComponent={()=>{
-                //                             return(
-                //                                     <CategoriesSlideView/>
-                //                                 )
-                //                         }}
-                ListHeaderComponentStyle={{ height: 300 }}
                 data={lessons}
                 keyExtractor={(lesson) => lesson.nimi}
                 renderItem={({ item }) => {
@@ -42,10 +33,6 @@ const LessonsList = ({ lessons }) => {
                             }}>
                             <LessonsDetail lesson={item}></LessonsDetail>
                         </TouchableOpacity>
-
-
-
-
                     )
                 }}
             />
