@@ -1,8 +1,8 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import { View, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import LessonsDetail from './LessonsDetail';
 import { useNavigation } from '@react-navigation/native';
-import {Context as CategoriesContext} from '../context/CategoriesContext'
+import { Context as CategoriesContext } from '../context/CategoriesContext'
 
 
 /**
@@ -12,7 +12,7 @@ import {Context as CategoriesContext} from '../context/CategoriesContext'
 
 
 const LessonsList = ({ lessons }) => {
-    const {state: {chosenLesson}, setChosenLesson} = useContext(CategoriesContext)
+    const { state: { chosenLesson }, setChosenLesson } = useContext(CategoriesContext)
     const navigation = useNavigation();
     // console.log(setChosenLesson)
 
