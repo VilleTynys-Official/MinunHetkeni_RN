@@ -27,6 +27,7 @@ const CategoriesList = ({ title, categories, navigation, isHorizontal }) => {
                             onPress={() => {
                                 // console.log(item.kategoria_id)
                                 setChosenCategory(item.kategoria_id)
+                                //TODO: tarkista navigointi. Kaatuili ainakin emulaattorin kanssa.
                                 navigation.navigate('LessonsTab', { kategoria_id: item.kategoria_id, lessons: item.lessons })
                             }}>
                             <CategoriesDetail category={item} />
