@@ -6,13 +6,11 @@ import { FlatList } from 'react-native-gesture-handler';
 import LessonsList from '../components/LessonsList';
 import CategoriesCarousel from '../components/CategoriesCarousel';
 
-/**TODO
- * 1 haetaan valitun kategorian lessonien tiedot. OK
- * 2 renderöidään ne listaksi (LessonsList komponentilla.) OK
+/**TODO:
+ * Tämän koko screeenin voi poistaa sit kun navigoinnin toiminta on varmistettu.
  * 
  */
 
-//lessonssit saadaan propsina CategoriesLististä, myöhemmin ehkä Providerilla.
 
 
 
