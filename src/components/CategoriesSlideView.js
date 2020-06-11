@@ -25,17 +25,9 @@ const CategoriesSlideView = () => {
     const [carousel, setCarousel] = useState(null);
     const categories = useCategories();
     const { state: {chosenCategory}, setChosenCategory} = useContext(CategoriesContext);
-    // console.log(carousel);
-    // console.log(chosenCategory)
-
-
 
     //päivitetään CategoriesContext.
     const changeCategory= () =>{
-        // console.log('***')
-        // console.log(carousel.currentIndex)
-        // // console.log(categories[carousel.currentIndex].kategoria_id);
-        // console.log(categories[carousel.currentIndex].kategoria_id);
         setChosenCategory(categories[carousel.currentIndex].kategoria_id);
     }
 
