@@ -20,30 +20,19 @@ import { ScrollView } from 'react-native-gesture-handler';
  */
 
 const LessonsScreenTab = (navigation) => {
-    const {state: {chosenCategory}} = useContext(CategoriesContext);
+    const { state: { chosenCategory } } = useContext(CategoriesContext);
     const categories = useCategories()
-
-    //LESSONS PITÄÄ OLLA MUOTOA:
-    // Object {
-    //     "kesto": "10 minuuttia, 13 sekuntia",
-    //     "nimi": "Istunto 4",
-    // },
-    // Object {
-    //     "kesto": "10 minuuttia, 13 sekuntia",
-    //     "nimi": "Istunto 4",
-    // },
-
 
     //TODO: Tähän funktio joka palauttaa lessons[] jossa on chosenCategoryyn kuuluvat lessonit.
     // console.log('lessonit:', categories.filter(category => category.kategoria_id== '0001'))
-    const [lessons]  = categories.filter(category => category.kategoria_id== chosenCategory).map(x => x.lessons)
-    console.log('***', lessons)
+    const [lessons] = categories.filter(category => category.kategoria_id == chosenCategory).map(x => x.lessons)
+    // console.log('***', lessons)
 
 
     return (
         <View style={styles.container}>
-            <CategoriesSlideView style={ {flex:1}}/>
-            <ScrollView  style={{ flex: 1}}>
+            <CategoriesSlideView style={{ flex: 1 }} />
+            <ScrollView style={{ flex: 1 }}>
                 <LessonsList lessons={lessons} />
             </ScrollView>
         </View>
