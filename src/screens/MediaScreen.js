@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { Context as CategoriesContext } from '../context/CategoriesContext';
 import { Ionicons } from '@expo/vector-icons';
-import { Audio } from 'expo';
+import { Audio } from 'expo-av';
 
 /**
  * TODO:
@@ -12,6 +12,12 @@ import { Audio } from 'expo';
  * - Setup player to work
  * 
  * 
+ * 
+ * MEDIA-PLAYER
+ *  Sovelletaan siitä mitä tehty Tracker projektissa.
+ * 
+ *  Siirto omaksi komponentitksi?
+ * 
  */
 
 const MediaScreen = () => {
@@ -20,6 +26,47 @@ const MediaScreen = () => {
     const isPlaying = true;
 
 
+
+    const audioBookPlaylist = [
+        {
+            title: 'Hamlet - Act I',
+            author: 'William Shakespeare',
+            source: 'Librivox',
+            uri:
+                'https://ia800204.us.archive.org/11/items/hamlet_0911_librivox/hamlet_act1_shakespeare.mp3',
+            imageSource: 'http://www.archive.org/download/LibrivoxCdCoverArt8/hamlet_1104.jpg'
+        },
+        {
+            title: 'Hamlet - Act II',
+            author: 'William Shakespeare',
+            source: 'Librivox',
+            uri:
+                'https://ia600204.us.archive.org/11/items/hamlet_0911_librivox/hamlet_act2_shakespeare.mp3',
+            imageSource: 'http://www.archive.org/download/LibrivoxCdCoverArt8/hamlet_1104.jpg'
+        }]
+
+
+
+    const startListening = async () => {
+        try {
+            const { sound: soundObject, status } = await Audio.Sound.createAsync(
+                { uri: 'https://ia600204.us.archive.org/11/items/hamlet_0911_librivox/hamlet_act2_shakespeare.mp3' },
+                { shouldPlay: true }
+            );
+            // Your sound is playing!
+        } catch (error) {
+            // An error occurred!
+        };
+    };
+
+    const stopListening = async () =>{};
+
+
+
+
+
+
+    //Tää scaffold on netistä.
     return (
         <View style={styles.container}>
             <Image
@@ -30,7 +77,13 @@ const MediaScreen = () => {
                 <TouchableOpacity style={styles.control} onPress={() => alert('')}>
                     <Ionicons name='ios-skip-backward' size={48} color='#444' />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.control} onPress={() => alert('')}>
+                <TouchableOpacity
+                    style={styles.control}
+                    onPress={() => {
+                        console.log('*** aloitetaan soittaminen')
+                        startListening()
+                    }}>
+
                     {isPlaying ? (
                         <Ionicons name='ios-pause' size={48} color='#444' />
                     ) : (
