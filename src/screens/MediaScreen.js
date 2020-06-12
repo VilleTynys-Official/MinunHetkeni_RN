@@ -7,8 +7,8 @@ import { Audio } from 'expo';
 /**
  * TODO:
  * - get information of chosenLesson and category (used in the player) OK.
- * - Choose player (expo backed).
- * - Visual stuff
+ * - Choose player (that has expo backed).
+ * - Visual stuff   >>semi OK
  * - Setup player to work
  * 
  * 
