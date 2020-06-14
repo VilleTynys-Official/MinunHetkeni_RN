@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { Context as CategoriesContext } from '../context/CategoriesContext';
 import { Ionicons } from '@expo/vector-icons';
@@ -15,51 +15,60 @@ import { Audio } from 'expo-av';
  * 
  * MEDIA-PLAYER
  *  Sovelletaan siitä mitä tehty Tracker projektissa.
- * 
+ *  
+ *  1 luodaan state soittimelle.
+ *  2 yhdistetään state buttoneihin.
+ *  
  *  Siirto omaksi komponentitksi?
  * 
+ * 
+ * 
+ * SOUND INSTANCEN LUONTI
+ * 1 New expo.audio.Sound() &  playbackObject.loadAsync()
+ * 
+ * 2 Expo.Audio.Sound.create(source, initialStatus = {}, onPlaybackStatusUpdate = null, downloadFirst = true)
+ *  >>tämän pitäisi myös ladata playbackObject suoraan..
  */
 
 const MediaScreen = () => {
-    const { state: { chosenLesson, chosenCategory } } = useContext(CategoriesContext);
-    // console.log('****** Mediascreenin saama state on: ', state);
-    const isPlaying = true;
+    const { state: { chosenLesson: {audio_url, kesto, nimi, image_url}, chosenCategory } } = useContext(CategoriesContext); //Contextista ulos tarvittavat tiedot.
+    // console.log('****** Mediascreenin saama lesson data on: ', chosenLesson);
+    // console.log(audio_url)
 
+    //soittimen statet:
+    const [isPlaying, setIsPlaying] = useState(false)
+    const [playbackObject, setPlaybackObject] = useState(new Audio.Sound())
+    const [currentIndex, setCurrentIndex] = useState(0)
+    const [volume, setVolume] = useState(1.0)
+    const [isBuffering, setIsBufferring] = useState(false)
 
+    // console.log('playbackObjekti:', playbackObject)
 
-    const audioBookPlaylist = [
-        {
-            title: 'Hamlet - Act I',
-            author: 'William Shakespeare',
-            source: 'Librivox',
-            uri:
-                'https://ia800204.us.archive.org/11/items/hamlet_0911_librivox/hamlet_act1_shakespeare.mp3',
-            imageSource: 'http://www.archive.org/download/LibrivoxCdCoverArt8/hamlet_1104.jpg'
-        },
-        {
-            title: 'Hamlet - Act II',
-            author: 'William Shakespeare',
-            source: 'Librivox',
-            uri:
-                'https://ia600204.us.archive.org/11/items/hamlet_0911_librivox/hamlet_act2_shakespeare.mp3',
-            imageSource: 'http://www.archive.org/download/LibrivoxCdCoverArt8/hamlet_1104.jpg'
-        }]
-
-
-
-    const startListening = async () => {
+    //playerin reference kun ladataan sivu ensimmäisen kerran
+    useEffect(() => {      
         try {
-            const { sound: soundObject, status } = await Audio.Sound.createAsync(
-                { uri: 'https://ia600204.us.archive.org/11/items/hamlet_0911_librivox/hamlet_act2_shakespeare.mp3' },
-                { shouldPlay: true }
-            );
-            // Your sound is playing!
-        } catch (error) {
-            // An error occurred!
-        };
-    };
+             playbackObject.loadAsync(
+                { uri: audio_url}
+            )
+        }catch (error){
+            console.log(error)
+        }
+        console.log('ajettiin use effect.')
+    }, [playbackObject, audio_url]);
 
-    const stopListening = async () =>{};
+
+    const startListening = async () =>{
+        await playbackObject.playAsync();
+        setIsPlaying(true)
+
+    }
+
+    //pause playbackObject
+    const pauseListening = async (playbackObject) => {
+        // console.log('***** playbackObjekti on:', playbackObject)
+        await playbackObject.pauseAsync();
+        setIsPlaying(false);
+    };
 
 
 
@@ -71,25 +80,35 @@ const MediaScreen = () => {
         <View style={styles.container}>
             <Image
                 style={styles.albumCover}
-                source={{ uri: 'http://www.archive.org/download/LibrivoxCdCoverArt8/hamlet_1104.jpg' }}
+                source={{ uri: image_url }}
             />
             <View style={styles.controls}>
                 <TouchableOpacity style={styles.control} onPress={() => alert('')}>
                     <Ionicons name='ios-skip-backward' size={48} color='#444' />
                 </TouchableOpacity>
-                <TouchableOpacity
-                    style={styles.control}
-                    onPress={() => {
-                        console.log('*** aloitetaan soittaminen')
-                        startListening()
-                    }}>
+                {isPlaying ?
+                    (
+                        <TouchableOpacity
+                            style={styles.control}
+                            onPress={() => {
+                                // console.log('*** pause', playbackObject)
+                                // playbackObject.setStatusAsync({ shouldPlay: false }
+                                pauseListening(playbackObject)
 
-                    {isPlaying ? (
-                        <Ionicons name='ios-pause' size={48} color='#444' />
-                    ) : (
-                            <Ionicons name='ios-play-circle' size={48} color='#444' />
-                        )}
-                </TouchableOpacity>
+                            }}>
+                            <Ionicons name='ios-pause' size={48} color='#444' />
+                        </TouchableOpacity>
+                    )
+                    : (<TouchableOpacity
+                        style={styles.control}
+                        onPress={() => {
+                            // console.log('*** aloitetaan soittaminen')
+                            startListening()
+                        }}>
+                        <Ionicons name='ios-play-circle' size={48} color='#444' />
+                    </TouchableOpacity>
+                    )
+                }
                 <TouchableOpacity style={styles.control} onPress={() => alert('')}>
                     <Ionicons name='ios-skip-forward' size={48} color='#444' />
                 </TouchableOpacity>
