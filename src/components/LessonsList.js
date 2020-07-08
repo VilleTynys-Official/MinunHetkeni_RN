@@ -12,7 +12,7 @@ import { Context as CategoriesContext } from '../context/CategoriesContext'
 
 
 const LessonsList = ({ lessons }) => {
-    const { state: { chosenLesson }, setChosenLesson } = useContext(CategoriesContext)
+    const { setChosenLesson } = useContext(CategoriesContext) //TODO poista chosenLesson jos turha..
     const navigation = useNavigation();
     // console.log(setChosenLesson)
 
