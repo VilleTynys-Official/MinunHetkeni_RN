@@ -28,7 +28,7 @@ const setChosenCategory = dispatch =>(category) => {
     dispatch ({ type: 'set_chosen_category', payload: category });
 };
 
-//TODO: setChosenLesson
+//setChosenLesson
 const setChosenLesson = dispatch => (lesson) => {
     // console.log('****tallennetaan Contextiin:', lesson)
     dispatch ({ type: "set_chosen_lesson",  payload: lesson })
