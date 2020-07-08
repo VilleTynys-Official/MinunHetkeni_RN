@@ -14,11 +14,11 @@ import {Context as CategoriesContext} from '../context/CategoriesContext';
  * Sisältää mahdollisuuden hyödyntää myös categorioista muitakin tietoja OK
  * 
  * TODO:
- * 1 styling kuntoon
- * 2 CategoriesContextin päivitys
- * 3 LessonsList kun CategoriesContext päivittyy.
- * 4 Aloitus CategoriesContextin avulla.
- * myöhemmin catregories vaan propsina sisälle, tai ehkä jopa suoraan vaan arrey jossa imaget?
+ * 1 styling kuntoon OK
+ * 2 CategoriesContextin päivitys OK
+ * 3 LessonsList kun CategoriesContext päivittyy. OK
+ * 4 Aloitus CategoriesContextin avulla. OK
+ * myöhemmin categories vaan propsina sisälle, tai ehkä jopa suoraan vaan arrey jossa imaget?
 */
 
 const CategoriesSlideView = () => {
@@ -26,7 +26,7 @@ const CategoriesSlideView = () => {
     const categories = useCategories();
     const { state: {chosenCategory}, setChosenCategory} = useContext(CategoriesContext);
 
-    //päivitetään CategoriesContext.
+    //päivittää CategoriesContextin.
     const changeCategory= () =>{
         setChosenCategory(categories[carousel.currentIndex].kategoria_id);
     }
