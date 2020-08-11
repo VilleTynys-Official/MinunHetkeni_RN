@@ -6,6 +6,10 @@ import { Context as CategoriesContext } from '../context/CategoriesContext'
 
 
 /**
+ * TODO:
+ *  Minor: Lessons list ei päivity jos käyttäjä vaihtaa categorian main screenissä (edellisen lessonit jäävät ruutuun kunnes carousellia pyöritetään)
+ * 
+ * 
  * 
  * @param {*} lessons [] joka sisältää tiedot lessoneista, jotka halutaan esittää.
  */
