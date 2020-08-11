@@ -14,5 +14,5 @@ Fix navigation,
 Enhance media player,
 build back end
 
-!(https://github.com/VilleTynys-Official/MinunHetkeni_RN/tree/Navigoinnin_p%C3%A4ivitys/pics/Architecture.png)
+![alt text](https://github.com/VilleTynys-Official/MinunHetkeni_RN/tree/Navigoinnin_p%C3%A4ivitys/pics/Architecture.png)
 
