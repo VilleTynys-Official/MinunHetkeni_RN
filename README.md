@@ -1,5 +1,5 @@
 # MinunHetkeni_RN
-Mobile application for Mindfullness. Built with React Native.
+Mobile application for Mindfullness. Built with React Native. Still a work in progress.
 
 Technologies, libraries & concepts used:
 React Native,
@@ -8,4 +8,9 @@ Functional components,
 Hooks for managing the state of the program,
 Media player,
 Carousel with scrolling that updates the list below it.
+
+To-do-list:
+Fix navigation,
+Enhance media player,
+build back end
 
