@@ -16,27 +16,19 @@ import { Audio } from 'expo-av';
  * MEDIA-PLAYER
  *  Sovelletaan siitä mitä tehty Tracker projektissa.
  *  
- *  1 luodaan state soittimelle.
- *  2 yhdistetään state buttoneihin.
- *  
- *  Siirto omaksi komponentitksi?
+ * 1    luodaan state playbackObjectille
+ * 2    ladataan mp3 loadAsyncillä se kun sivu lataantuu ensimmäisen kerran. Toistetaan mp3.
+ * 3    
  * 
- * 
- * 
- * SOUND INSTANCEN LUONTI
- * 1 New expo.audio.Sound() &  playbackObject.loadAsync()
- * 
- * 2 Expo.Audio.Sound.create(source, initialStatus = {}, onPlaybackStatusUpdate = null, downloadFirst = true)
- *  >>tämän pitäisi myös ladata playbackObject suoraan..
  */
 
 const MediaScreen = () => {
-    const { state: { chosenLesson: {audio_url, kesto, nimi, image_url}, chosenCategory } } = useContext(CategoriesContext); //Contextista ulos tarvittavat tiedot.
+    const { state: { chosenLesson: { audio_url, kesto, nimi, image_url }, chosenCategory } } = useContext(CategoriesContext); //Contextista ulos tarvittavat tiedot.
     // console.log('****** Mediascreenin saama lesson data on: ', chosenLesson);
     // console.log(audio_url)
 
     //soittimen statet:
-    const [isPlaying, setIsPlaying] = useState(false)
+    const [isPlaying, setIsPlaying] = useState(true)
     const [playbackObject, setPlaybackObject] = useState(new Audio.Sound())
     const [currentIndex, setCurrentIndex] = useState(0)
     const [volume, setVolume] = useState(1.0)
@@ -44,29 +36,62 @@ const MediaScreen = () => {
 
     // console.log('playbackObjekti:', playbackObject)
 
-    //playerin reference kun ladataan sivu ensimmäisen kerran
-    useEffect(() => {      
-        try {
-             playbackObject.loadAsync(
-                { uri: audio_url}
-            )
-        }catch (error){
-            console.log(error)
-        }
+
+
+    
+    //PLAYBACK OBJECT EI TALLENNU!!! ASYNC ja USE-EFFECT eivät tykkää toisistaan!!???
+    // mediaplayer soimaan heti kun ladataan sivu ensimmäisen kerran
+    useEffect(() => {
+        (async () => {
+            try {
+                console.log('asfd')
+                await playbackObject.loadAsync( {uri: audio_url}, {shouldPlay: true});  //ladataan ja soitetaan heti.
+                // await playbackObject.playAsync();
+                // Your sound is playing!
+                console.log(playbackObject)
+            } catch (error) {
+                console.log(error)
+            };
+            console.log('asdf')
+        })
         console.log('ajettiin use effect.')
-    }, [playbackObject, audio_url]);
+
+    }, []);
 
 
-    const startListening = async () =>{
-        await playbackObject.playAsync();
-        setIsPlaying(true)
 
-    }
+    //VANHA
+    // useEffect(() => {
+    //     const startingMediaPlayer = async () => {
+    //         try {
+    //             await playbackObject.loadAsync( {uri: audio_url});
+    //             await playbackObject.playAsync();
+    //             // Your sound is playing!
 
+    //         } catch (error) {
+    //             console.log(error)
+    //         };
+    //     }
+    //     console.log('ajettiin use effect.')
+    // }, []);
+
+
+
+
+
+    // const startListening = async () => {
+    //     await playbackObject.playAsync();
+    //     setIsPlaying(true)
+
+    // }
+
+
+    
     //pause playbackObject
     const pauseListening = async (playbackObject) => {
-        // console.log('***** playbackObjekti on:', playbackObject)
-        await playbackObject.pauseAsync();
+        console.log(playbackObject)
+        // console.log('***** playbackObjekti on:', playbackObject.AVPlaybackStatus)
+        // await playbackObject.pauseAsync();
         setIsPlaying(false);
     };
 
@@ -91,9 +116,9 @@ const MediaScreen = () => {
                         <TouchableOpacity
                             style={styles.control}
                             onPress={() => {
-                                // console.log('*** pause', playbackObject)
+                                console.log('*** pause')
                                 // playbackObject.setStatusAsync({ shouldPlay: false }
-                                pauseListening(playbackObject)
+                                pauseListening()
 
                             }}>
                             <Ionicons name='ios-pause' size={48} color='#444' />
@@ -102,8 +127,8 @@ const MediaScreen = () => {
                     : (<TouchableOpacity
                         style={styles.control}
                         onPress={() => {
-                            // console.log('*** aloitetaan soittaminen')
-                            startListening()
+                            console.log('*** aloitetaan soittaminen')
+                            // startListening()
                         }}>
                         <Ionicons name='ios-play-circle' size={48} color='#444' />
                     </TouchableOpacity>
@@ -112,6 +137,7 @@ const MediaScreen = () => {
                 <TouchableOpacity style={styles.control} onPress={() => alert('')}>
                     <Ionicons name='ios-skip-forward' size={48} color='#444' />
                 </TouchableOpacity>
+                
             </View>
         </View>
     )
