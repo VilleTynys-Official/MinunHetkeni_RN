@@ -20,13 +20,10 @@ build back end
 
 ![example picture of user interface](pics/UserInterface.jpg)
 
-![example picture of component design](pics/ComponentDesign_example.jpg)
-
-
-
-
 
 ## Design
+
+![example picture of component design](pics/ComponentDesign_example.jpg)
 
 Example of design the flow of the screen components.
 ![example picture of flow](pics/Architecture.png)
