@@ -20,7 +20,7 @@ export default function LogoTitle() {
       iconstyle: {
           fontSize: 25,
           fontWeight: "bold",
-          color: 'rgb(240,240,240)',
+          color: 'rgb(252, 186, 186)',
           fontFamily: 'monospace'
       }
   })

@@ -1,26 +1,44 @@
-import React from 'react';
-import {View, Text, StyleSheet, Image, FlatList, TouchableOpacity} from 'react-native';
-import CategoriesDetail from './CategoriesDetail';
-import { ScrollView } from 'react-native-gesture-handler';
+import React, { useContext } from 'react';
+import { View, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import LessonsDetail from './LessonsDetail';
+import { useNavigation } from '@react-navigation/native';
+import { Context as CategoriesContext } from '../context/CategoriesContext'
 
 
-//komponentti "pidetty tyhmänä" >>> Näyttää kaikki lessonit jotka annetaan sisälle.
+/**
+ * TODO:
+ *  Minor: Lessons list ei päivity jos käyttäjä vaihtaa categorian main screenissä (edellisen lessonit jäävät ruutuun kunnes carousellia pyöritetään)
+ * 
+ * 
+ * 
+ * @param {*} lessons [] joka sisältää tiedot lessoneista, jotka halutaan esittää.
+ */
 
 
-const LessonsList = ({lessons}) => {
-    // console.log(lesson)
+const LessonsList = ({ lessons }) => {
+    const { setChosenLesson } = useContext(CategoriesContext) //TODO poista chosenLesson jos turha..
+    const navigation = useNavigation();
+    // console.log(setChosenLesson)
+
+
     return (
         <View style={styles.container}>
-            <Text>lista eri lessoneita:</Text>
             <FlatList
                 data={lessons}
-                keyExtractor={ (lesson) => lesson.nimi}
-                renderItem = {( {item }) => {
+                keyExtractor={(lesson) => lesson.nimi}
+                renderItem={({ item }) => {
                     return (
-                            <LessonsDetail lesson ={item}></LessonsDetail>
+
+                        <TouchableOpacity
+                            onPress={() => {
+                                // console.log('Lessoniksi valittu: ', item, 'päivitetään se Contextiin.')
+                                setChosenLesson(item)
+                                navigation.navigate('MediaScreen')
+                            }}>
+                            <LessonsDetail lesson={item}></LessonsDetail>
+                        </TouchableOpacity>
                     )
-                }}    
+                }}
             />
         </View>
     )
@@ -28,14 +46,8 @@ const LessonsList = ({lessons}) => {
 
 
 const styles = StyleSheet.create({
-    title: {
-        fontSize: 25,
-        fontWeight: 'bold',
-        marginLeft: 10,
-        marginBottom: 5,
-    },
     container: {
-        marginBottom: 30,
+        margin: 10,
     }
 
 });

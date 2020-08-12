@@ -7,47 +7,65 @@
             "kuvaus": "2 viikkoa kestävä kurssi, joka sisältää lyhyen ohjatun meditoinnin viikon jokaiselle päivälle.",
             "kestoPäivissä": 14,
             "voimassa": true,
-            "image_url": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1557258847-chinese-evergreen-houseplant-1557258690.jpg?crop=0.883xw:0.887xh;0.0849xw,0.0821xh&resize=480:*",
+            "image_url": "https://i.pinimg.com/564x/66/22/f7/6622f7f9cfcefa8d9c63cc7bc1f594d9.jpg",
             "lessons":
             [
                 {
                     "nimi": "Istunto 1",
-                    "kesto": "10 minuuttia, 13 sekuntia"
+                    "kesto": "10 minuuttia, 13 sekuntia",
+                    "audio_url": "https://ia600204.us.archive.org/11/items/hamlet_0911_librivox/hamlet_act2_shakespeare.mp3",
+                    "image_url": "https://images.unsplash.com/photo-1508672019048-805c876b67e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1693&q=80"
                 },
 
                 {
                     "nimi": "Istunto 2",
-                    "kesto": "11 minuuttia, 13 sekuntia"
+                    "kesto": "11 minuuttia, 13 sekuntia",
+                    "audio_url": "https://ia802804.us.archive.org/6/items/spc183_1809_librivox/spc183_allthings_cc_128kb.mp3",
+                    "image_url": "https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1670&q=80"
                 },
                 {
                     "nimi": "Istunto 3",
-                    "kesto": "11 minuuttia, 13 sekuntia"
+                    "kesto": "11 minuuttia, 13 sekuntia",
+                    "audio_url": "https://ia802804.us.archive.org/6/items/spc183_1809_librivox/spc183_allthings_cc_128kb.mp3",
+                    "image_url": "https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1670&q=80"
                 },
                 {
                     "nimi": "Istunto 4",
-                    "kesto": "10 minuuttia, 13 sekuntia"
+                    "kesto": "10 minuuttia, 13 sekuntia",
+                    "audio_url": "https://ia802804.us.archive.org/6/items/spc183_1809_librivox/spc183_allthings_cc_128kb.mp3",
+                    "image_url": "https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1670&q=80"
                 },
 
                 {
                     "nimi": "Istunto 5",
-                    "kesto": "11 minuuttia, 13 sekuntia"
+                    "kesto": "11 minuuttia, 13 sekuntia",
+                    "audio_url": "https://ia802804.us.archive.org/6/items/spc183_1809_librivox/spc183_allthings_cc_128kb.mp3",
+                    "image_url": "https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1670&q=80"
                 },
                 {
                     "nimi": "Istunto 6",
-                    "kesto": "11 minuuttia, 13 sekuntia"
+                    "kesto": "11 minuuttia, 13 sekuntia",
+                    "audio_url": "https://ia802804.us.archive.org/6/items/spc183_1809_librivox/spc183_allthings_cc_128kb.mp3",
+                    "image_url": "https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1670&q=80"
                 },
                 {
                     "nimi": "Istunto 7",
-                    "kesto": "10 minuuttia, 13 sekuntia"
+                    "kesto": "10 minuuttia, 13 sekuntia",
+                    "audio_url": "https://ia802804.us.archive.org/6/items/spc183_1809_librivox/spc183_allthings_cc_128kb.mp3",
+                    "image_url": "https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1670&q=80"
                 },
 
                 {
                     "nimi": "Istunto 8",
-                    "kesto": "11 minuuttia, 13 sekuntia"
+                    "kesto": "11 minuuttia, 13 sekuntia",
+                    "audio_url": "https://ia802804.us.archive.org/6/items/spc183_1809_librivox/spc183_allthings_cc_128kb.mp3",
+                    "image_url": "https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1670&q=80"
                 },
                 {
                     "nimi": "Istunto 9",
-                    "kesto": "11 minuuttia, 13 sekuntia"
+                    "kesto": "11 minuuttia, 13 sekuntia",
+                    "audio_url": "https://ia802804.us.archive.org/6/items/spc183_1809_librivox/spc183_allthings_cc_128kb.mp3",
+                    "image_url": "https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1670&q=80"
                 }
 
             ]
@@ -59,17 +77,21 @@
             "kuvaus": "4 viikkoa kestävä ilmainen peruskurssi. Ideana oppia ohjatusti perusteet joiden avulla meditointi onnistuu tarvittaessa myös ilman ohjausta.",
             "kestoPäivissä": 28,
             "voimassa": true,
-            "image_url": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1557258847-chinese-evergreen-houseplant-1557258690.jpg?crop=0.883xw:0.887xh;0.0849xw,0.0821xh&resize=480:*",
+            "image_url": "https://i.pinimg.com/564x/66/22/f7/6622f7f9cfcefa8d9c63cc7bc1f594d9.jpg",
             "lessons":
             [
                 {
                     "nimi": "Istunto 1",
-                    "kesto": "10 minuuttia, 13 sekuntia"
+                    "kesto": "10 minuuttia, 13 sekuntia",
+                    "audio_url": "https://ia802804.us.archive.org/6/items/spc183_1809_librivox/spc183_allthings_cc_128kb.mp3",
+                    "image_url": "https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1670&q=80"
                 },
 
                 {
                     "nimi": "Istunto 2",
-                    "kesto": "11 minuuttia, 13 sekuntia"
+                    "kesto": "11 minuuttia, 13 sekuntia",
+                    "audio_url": "https://ia802804.us.archive.org/6/items/spc183_1809_librivox/spc183_allthings_cc_128kb.mp3",
+                    "image_url": "https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1670&q=80"
                 }
 
             ]
@@ -82,16 +104,16 @@
             "kuvaus": "4 viikkoa kestävä jatkokurssi, jossa syvennetään peruskurssilla opittuja menetelmiä.",
             "kestoPäivissä": 28,
             "voimassa": true,
-            "image_url": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1557258847-chinese-evergreen-houseplant-1557258690.jpg?crop=0.883xw:0.887xh;0.0849xw,0.0821xh&resize=480:*"
+            "image_url": "https://i.pinimg.com/564x/66/22/f7/6622f7f9cfcefa8d9c63cc7bc1f594d9.jpg",
         },
 
                 {
             "nimi": "Metta-meditointi",
             "kategoria_id": "0004",
             "kuvaus": "Ystävällisyyttä itseäsi sekä muita kohtaan korostava meditointi menetelmä. Tämä ohjattu kurssi tuo vaihtelua perinteiseen Vipasana-meditointi lähestymistapaan.",
-            "kestoPäivissä": 28,
+            "kestoPäivissä": 7,
             "voimassa": false,
-            "image_url": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1557258847-chinese-evergreen-houseplant-1557258690.jpg?crop=0.883xw:0.887xh;0.0849xw,0.0821xh&resize=480:*"
+            "image_url": "https://i.pinimg.com/564x/66/22/f7/6622f7f9cfcefa8d9c63cc7bc1f594d9.jpg",
         }
 
     ]
