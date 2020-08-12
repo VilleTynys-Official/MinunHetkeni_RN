@@ -14,5 +14,22 @@ fix navigation,
 enhance media player,
 build back end
 
-![](pics/Architecture.png)
 
+
+## User interface
+
+![example picture of user interface](pics/UserInterface.jpg)
+
+![example picture of component design](pics/ComponentDesign_example.jpg)
+
+
+
+
+
+## Design
+
+Example of design the flow of the screen components.
+![example picture of flow](pics/Architecture.png)
+
+Example of the architecture design.
+![example picture of architecture](pics/FrontEnd_flowchart.jpg)
